@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natalie's Favorite Recipes — Main Courses — Seafood</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @media print { .recipe { page-break-after: always; } .recipe:last-child { page-break-after: avoid; } body { margin: 0; } }
+        body { font-family: 'Lato', Georgia, serif; color: #333; max-width: 7.5in; margin: 0 auto; padding: 0.5in; }
+        .recipe { padding: 0.25in 0; }
+        .recipe-header { border-bottom: 2px solid #8B0000; padding-bottom: 8px; margin-bottom: 16px; }
+        .recipe-title { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: bold; color: #8B0000; margin: 0; }
+        .recipe-meta { display: flex; gap: 32px; margin: 12px 0; font-size: 14px; background: #f9f5f0; padding: 8px 12px; border-radius: 4px; }
+        .meta-item { display: flex; gap: 6px; } .meta-label { font-weight: bold; }
+        h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #8B0000; margin: 20px 0 8px 0; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+        .ingredients ul { list-style: disc; padding-left: 24px; margin: 0; }
+        .ingredients li { font-size: 14px; line-height: 1.7; }
+        .directions ol { padding-left: 24px; margin: 0; }
+        .directions li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+        .recipe-footer { margin-top: 28px; padding-top: 10px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .recipe-source { font-size: 11px; font-style: italic; color: #999; }
+        .cookbook-stamp { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; color: #8B0000; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        h1.section-title { font-family: 'Playfair Display', Georgia, serif; text-align: center; font-size: 32px; color: #8B0000; border-bottom: 3px solid #8B0000; padding-bottom: 12px; margin-bottom: 0; }
+    
+        /* Table of Contents styles */
+        .toc {
+            page-break-after: always;
+            padding: 0.5in 0;
+        }
+        .toc h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 22px;
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin: 24px 0 16px 0;
+        }
+        .toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc li {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 16px;
+            line-height: 2.2;
+            border-bottom: 1px dotted #ccc;
+        }
+        .toc li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 2px 0;
+        }
+        .toc li a:hover {
+            color: #8B0000;
+        }
+        .toc li .toc-number {
+            color: #8B0000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="section-title">Main Courses &mdash; Seafood</h1>
+
+<div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#escargots-with-a-twist"><span class="toc-number">1.</span> Escargots &ldquo;with a Twist&rdquo;</a></li>
+        <li><a href="#crab-cakes"><span class="toc-number">2.</span> Crab Cakes</a></li>
+        <li><a href="#jambalaya"><span class="toc-number">3.</span> Jambalaya</a></li>
+        <li><a href="#southwestern-tuna-casserole"><span class="toc-number">4.</span> Southwestern Tuna Casserole</a></li>
+        <li><a href="#tilapia-with-homemade-pesto"><span class="toc-number">5.</span> Tilapia with Homemade Pesto</a></li>
+        <li><a href="#chicken-and-shrimp-paella"><span class="toc-number">6.</span> Chicken and Shrimp Paella</a></li>
+        <li><a href="#ginger-teriyaki-fish-steaks"><span class="toc-number">7.</span> Ginger Teriyaki Fish Steaks</a></li>
+        <li><a href="#steamed-mussels-in-tarragon-dijon-emulsion"><span class="toc-number">8.</span> Steamed Mussels in Tarragon Dijon Emulsion</a></li>
+        <li><a href="#orange-glazed-cod"><span class="toc-number">9.</span> Orange-Glazed Cod</a></li>
+        <li><a href="#thai-tuna-burgers"><span class="toc-number">10.</span> Thai Tuna Burgers</a></li>
+        <li><a href="#calamari-stew-with-garlic-toast"><span class="toc-number">11.</span> Calamari Stew with Garlic Toast</a></li>
+        <li><a href="#sauted-lobster-with-oyster-mushrooms-and-ginger"><span class="toc-number">12.</span> Saut&eacute;ed Lobster with Oyster Mushrooms and Ginger</a></li>
+        <li><a href="#broiled-lobster-with-cajun-butter"><span class="toc-number">13.</span> Broiled Lobster with Cajun Butter</a></li>
+    </ol>
+</div>
+
+<!-- Recipe 1: Escargots "with a twist" -->
+<div class="recipe" id="escargots-with-a-twist">
+    <div class="recipe-header">
+        <p class="recipe-title">Escargots &ldquo;with a Twist&rdquo;</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>36 escargots</li>
+            <li>1/2 cup diced prosciutto</li>
+            <li>2 tbs. finely chopped shallots</li>
+            <li>2 tbs. finely chopped garlic</li>
+            <li>1 tbs. garlic powder</li>
+            <li>12 oz. chopped fresh spinach</li>
+            <li>1 tbs. lemon juice</li>
+            <li>1 tbs. sherry</li>
+            <li>2&ndash;3 sticks butter</li>
+            <li>8 oz. crumbled feta cheese</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 400&deg;F.</li>
+            <li>Saut&eacute; shallots, fresh garlic and garlic powder. Add remaining ingredients. Put in escargot dishes and top with cheese.</li>
+            <li>Bake until bubbly. Serve with crusty bread.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Chef Ulla Meyers</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 2: Crab Cakes -->
+<div class="recipe" id="crab-cakes">
+    <div class="recipe-header">
+        <p class="recipe-title">Crab Cakes</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Crab Cakes:</p>
+        <ul>
+            <li>1/4 cup finely chopped sweet onion</li>
+            <li>1/4 cup finely chopped celery</li>
+            <li>1/4 cup finely chopped red bell pepper</li>
+            <li>1/4 cup lightly packed chopped parsley</li>
+            <li>1/2 teaspoon dried thyme</li>
+            <li>16 unsalted top saltines, crushed (3/4 cup)</li>
+            <li>1/2 cup nonfat yogurt cheese</li>
+            <li>1 teaspoon horseradish</li>
+            <li>Pinch saffron</li>
+            <li>1 tablespoon freshly squeezed lemon juice</li>
+            <li>2 tablespoons egg substitute</li>
+            <li>1 pound lump crabmeat</li>
+            <li>1 tablespoon paprika</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Peanut Vinaigrette:</p>
+        <ul>
+            <li>1 clove garlic, bashed and chopped</li>
+            <li>2 tablespoons non-aromatic olive oil</li>
+            <li>1/2 cup rice wine vinegar</li>
+            <li>1/2 teaspoon dry mustard</li>
+            <li>1 teaspoon brown sugar</li>
+            <li>2 tablespoons peanut butter</li>
+            <li>1/8 teaspoon cayenne</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">For Serving:</p>
+        <ul>
+            <li>1 bunch watercress, stemmed</li>
+            <li>2 cups mixed salad greens</li>
+            <li>1/4 cup peanut vinaigrette</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Combine the onion, celery, pepper, parsley, thyme, cracker crumbs, yogurt, horseradish, saffron, lemon juice, and egg substitute. Stir the crab in gently.</li>
+            <li>Spray a flat baking sheet with olive oil spray. Sprinkle paprika over the whole pan. Pack the crab mixture tightly into a 1/3 cup measure and then tap it out onto the pan. Flatten each one to make 8, 1/2-inch thick patties. Turn and sprinkle the other sides with more paprika.</li>
+            <li>Heat a large skillet on medium high. Spray with olive oil pan spray and lay the patties in the hot pan. Sprinkle additional paprika lightly on the tops. Fry for 3 minutes on each side. Combine the watercress and salad greens and divide among 4 plates. Drizzle with peanut dressing and top with 2 crab cakes.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Graham Kerr's Kitchen</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 3: Jambalaya -->
+<div class="recipe" id="jambalaya">
+    <div class="recipe-header">
+        <p class="recipe-title">Jambalaya</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 10 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 40 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 tablespoon olive oil</li>
+            <li>1 16-ounce package kielbasa, cut into 1/4-inch rounds</li>
+            <li>1 28-ounce can whole tomatoes</li>
+            <li>1 8-ounce box jambalaya, Spanish, or fiesta-flavored rice mix</li>
+            <li>1 1-pound package peeled and deveined raw shrimp</li>
+            <li>1/4 teaspoon hot pepper sauce (optional)</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Heat the oil in a saucepan over medium heat. Add the kielbasa. Cook until browned, about 4 minutes.</li>
+            <li>Add the tomatoes along with 1/2 cup of water and their liquid and crush with the back of a spoon. Bring to a boil. Add the rice mix. Reduce heat, cover, and cook for the time specified on the package.</li>
+            <li>Add the shrimp, stir, cover, and cook until pink, 3 to 4 minutes. Add the hot pepper sauce (if using). Spoon onto plates.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 4: Southwestern Tuna Casserole -->
+<div class="recipe" id="southwestern-tuna-casserole">
+    <div class="recipe-header">
+        <p class="recipe-title">Southwestern Tuna Casserole</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 Tbsp. olive oil</li>
+            <li>1 medium onion, chopped</li>
+            <li>1 1/2 cups frozen corn kernels, thawed</li>
+            <li>1 can (10.5 ounces) reduced-fat, reduced-sodium cream of mushroom soup</li>
+            <li>1 cup store-bought bottled tomato salsa</li>
+            <li>1 tsp. chili powder (optional)</li>
+            <li>1 can (6 ounces) tuna, packed in water, drained and flaked</li>
+            <li>2 1/2 cups whole wheat pasta, cooked according to package directions</li>
+            <li>1 cup shredded cheese (cheddar blend preferred)</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat the oven to 350&deg;. Grease a 2-quart casserole dish with olive oil and set aside.</li>
+            <li>Place a large skillet over medium-high heat. Coat with the 1 tablespoon of oil, and when the oil is hot, add the onions. Cook and stir until softened, about 3 minutes. Stir in corn and cook 2 minutes longer to incorporate. Stir in the soup, salsa and chili powder (if desired) until well blended.</li>
+            <li>Add the tuna and cooked pasta, stirring just to coat. Pour into the prepared greased casserole dish. Sprinkle the top evenly with cheese.</li>
+            <li>Bake for about 25 minutes or until bubbling, remove from oven and serve immediately.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe created by Cat Cora — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 5: Tilapia with Homemade Pesto -->
+<div class="recipe" id="tilapia-with-homemade-pesto">
+    <div class="recipe-header">
+        <p class="recipe-title">Tilapia with Homemade Pesto</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 1/2 bunches fresh basil (about 1 1/2 cups lightly packed)</li>
+            <li>4 ounces toasted pine nuts</li>
+            <li>1/2 cup freshly grated Parmesan cheese</li>
+            <li>1/2 cup extra-virgin olive oil</li>
+            <li>4 pieces (6 ounces each) fresh tilapia</li>
+            <li>1 Tbsp. olive oil</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat broiler. Grind the basil, pine nuts and grated Parmesan cheese with a mortar and pestle until a smooth paste forms. Slowly add 1/4 cup of olive oil, grinding until a smooth sauce forms. If you don't have a mortar and pestle, use a food processor instead.</li>
+            <li>Season the pesto to taste with salt and pepper. Season the tilapia with salt and pepper on both sides. Heat a large saut&eacute; pan over medium-high heat. Add the oil and cook the fish for 1 to 2 minutes on the flesh side or until it turns light golden brown. Flip the fish over and spoon the pesto generously over the fish.</li>
+            <li>Transfer pan to the broiler and broil for 2 to 3 minutes or until the fish is cooked through. Remove fish from broiler and allow to rest on a plate. Serve fish hot.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe created by Curtis Stone — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 6: Chicken and Shrimp Paella -->
+<div class="recipe" id="chicken-and-shrimp-paella">
+    <div class="recipe-header">
+        <p class="recipe-title">Chicken and Shrimp Paella</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 15 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>2 teaspoons olive oil</li>
+            <li>1 boneless, skinless chicken breast half (about 5 ounces), cut into 1/2-inch cubes</li>
+            <li>1 onion, chopped</li>
+            <li>2 cloves garlic, minced</li>
+            <li>1 can (14 3/4 ounces) chicken broth</li>
+            <li>1 can (14 1/2 ounces) diced tomatoes with mild chopped chiles, drained</li>
+            <li>1 packet Goya Sazon seasoning</li>
+            <li>1/4 teaspoon salt</li>
+            <li>2/3 cup white long-grain rice</li>
+            <li>1 cup frozen peas, thawed</li>
+            <li>1/2 pound medium-size shrimp, cleaned</li>
+            <li>3/4 teaspoon hot pepper sauce</li>
+            <li>1/4 cup flat-leaf parsley, chopped</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>In large, deep, heavy pot, heat oil over medium heat. Add chicken; saut&eacute; for 5 minutes, turning once. Remove to a plate and reserve.</li>
+            <li>Add onion and garlic and cook over medium heat, stirring occasionally, for 5 minutes. Add broth, tomatoes, Sazon seasoning and salt. Bring to a boil. Stir in rice and simmer, on medium-low heat, covered, for 15 minutes.</li>
+            <li>Stir in peas and 1/2 cup water; simmer, covered, another 5 minutes or until rice is tender. Stir in chicken and shrimp; cook 1 minute. Cover, remove from heat. Let sit for 5 minutes. Stir in hot pepper sauce and parsley and serve.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 7: Ginger Teriyaki Fish Steaks -->
+<div class="recipe" id="ginger-teriyaki-fish-steaks">
+    <div class="recipe-header">
+        <p class="recipe-title">Ginger Teriyaki Fish Steaks</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>3/4 cup Kikkoman Teriyaki Marinade &amp; Sauce</li>
+            <li>2 tablespoons brown sugar, packed</li>
+            <li>1 teaspoon grated fresh ginger root</li>
+            <li>4 fresh fish steaks (halibut, mahi mahi, striped bass, or tuna), about 1 inch thick</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Combine teriyaki sauce, brown sugar and ginger; remove and reserve 1/4 cup and pour remainder over fish in large plastic food storage bag. Press air out of bag; close top securely. Turn bag over several times to coat fish well. Marinate 30 minutes, turning bag over once.</li>
+            <li>Grill fish 5 inches from hot coals 5 minutes on each side, or until fish flakes easily with fork, brushing occasionally with reserved sauce.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Kikkoman</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 8: Steamed Mussels in Tarragon Dijon Emulsion -->
+<div class="recipe" id="steamed-mussels-in-tarragon-dijon-emulsion">
+    <div class="recipe-header">
+        <p class="recipe-title">Steamed Mussels in Tarragon Dijon Emulsion</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 10 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 15 min</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Easy</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>4 lbs. mussels</li>
+            <li>2 cups dry white wine</li>
+            <li>3 chopped shallots</li>
+            <li>1 bay leaf</li>
+            <li>2 thyme sprigs</li>
+            <li>4 Tbs. extra-virgin olive oil</li>
+            <li>1/4 cup Dijon mustard</li>
+            <li>3 Tbs. chopped fresh tarragon</li>
+            <li>Salt</li>
+            <li>Freshly ground black pepper</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Discard any mussels that have cracked or are damaged. Remove beards from mussels, and scrub each mussel under cold water. Rinse until water runs clear.</li>
+            <li>Combine the wine, shallots, bay leaf, and thyme in a very large pot and bring to a slow simmer over medium heat.</li>
+            <li>Add the mussels to pot, and turn heat up to high. When steam starts to escape from cover, reduce heat to medium.</li>
+            <li>Shake pot to redistribute mussels, and cook for 5 to 10 minutes, or until mussels have opened. Remove from heat, remove mussels from liquid and discard any unopened mussels.</li>
+            <li>Pass the broth through a fine sieve into another saucepan. Reduce liquid on high heat for 2 minutes. Remove from heat, and with a hand held blender add the olive oil, Dijon, and tarragon. Season with salt and pepper and spoon over mussels.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Follow That Food, Episode FLFTF-112F — Fine Living</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 9: Orange-Glazed Cod -->
+<div class="recipe" id="orange-glazed-cod">
+    <div class="recipe-header">
+        <p class="recipe-title">Orange-Glazed Cod</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 1/2 tablespoons orange marmalade</li>
+            <li>2 teaspoons Dijon mustard</li>
+            <li>2 teaspoons reduced-sodium soy sauce</li>
+            <li>1 teaspoon grated orange zest</li>
+            <li>7/8 teaspoon coarsely ground black pepper</li>
+            <li>1 pound cod fillet</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Heat broiler. Coat broiler rack with cooking spray. In a small bowl, combine orange marmalade, Dijon mustard, soy sauce, orange zest and pepper until smooth.</li>
+            <li>Place fish on broiler rack; using a pastry brush, spread marmalade mixture over top of fish. Broil 10 minutes, or until fish flakes when tested with a fork.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 10: Thai Tuna Burgers -->
+<div class="recipe" id="thai-tuna-burgers">
+    <div class="recipe-header">
+        <p class="recipe-title">Thai Tuna Burgers</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>2 cans (6 ounces each) tuna packed in water, drained and flaked</li>
+            <li>1 egg, beaten</li>
+            <li>1/3 cup dry bread crumbs</li>
+            <li>2 tablespoons finely chopped fresh cilantro</li>
+            <li>2 teaspoons reduced-sodium soy sauce</li>
+            <li>1 teaspoon grated fresh gingerroot</li>
+            <li>1/8 teaspoon coarsely ground black pepper</li>
+            <li>1 1/2 teaspoons vegetable oil</li>
+            <li>4 seeded sandwich rolls, toasted</li>
+            <li>8 teaspoons sweet red chili sauce (such as A Taste of Thai)</li>
+            <li>1 cup alfalfa sprouts</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>In a large bowl, combine tuna, egg, bread crumbs, cilantro, soy sauce, ginger and pepper. Shape into four 3 1/2-inch patties.</li>
+            <li>Coat a large nonstick skillet with cooking spray; add oil and heat over medium heat. Add patties and cook 3 minutes on each side, or until golden brown and cooked through.</li>
+            <li>Serve on toasted rolls with chili sauce and alfalfa sprouts.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 11: Calamari Stew with Garlic Toast -->
+<div class="recipe" id="calamari-stew-with-garlic-toast">
+    <div class="recipe-header">
+        <p class="recipe-title">Calamari Stew with Garlic Toast</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 5 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 15 min</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Easy</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Calamari Stew:</p>
+        <ul>
+            <li>2 tablespoons olive oil</li>
+            <li>2 cloves garlic, cut in 1/2</li>
+            <li>1 3/4 cups tomato sauce</li>
+            <li>1 cup white wine</li>
+            <li>1 teaspoon fresh chopped thyme leaves</li>
+            <li>1 teaspoon red pepper flakes</li>
+            <li>1/2 teaspoon salt</li>
+            <li>1/2 teaspoon freshly ground black pepper</li>
+            <li>2 pounds calamari (squid), bodies thinly sliced and tentacles whole</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Garlic Toast:</p>
+        <ul>
+            <li>4 to 6 slices of bread</li>
+            <li>Olive oil, for drizzling</li>
+            <li>2 to 3 whole cloves garlic</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li><strong>For the Calamari Stew:</strong> Warm the olive oil over medium heat in a medium pot. Add the garlic and let cook until fragrant, about 2 minutes. Remove the garlic. Add the tomato sauce, white wine, thyme, red pepper flakes, salt, and pepper. Bring the mixture to a simmer. Add the calamari and stir to combine. Continue to cook until the mixture comes back up to a simmer, about 2 more minutes. Serve immediately with the Garlic Toasts.</li>
+            <li><strong>For the Garlic Toast:</strong> Preheat the oven to 350&deg;F. Meanwhile, drizzle the bread slices with olive oil. Toast until the bread is crisp and turning golden brown, about 8 to 10 minutes. Remove from the oven and rub the top of the toasts with whole garlic cloves. Serve immediately with the Calamari Stew.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Giada De Laurentiis, Everyday Italian — Food Network</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 12: Saut&eacute;ed Lobster with Oyster Mushrooms and Ginger -->
+<div class="recipe" id="sauted-lobster-with-oyster-mushrooms-and-ginger">
+    <div class="recipe-header">
+        <p class="recipe-title">Saut&eacute;ed Lobster with Oyster Mushrooms and Ginger</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>3 tbsp peanut or safflower oil</li>
+            <li>2 inches ginger, peeled and finely chopped</li>
+            <li>1 fat garlic clove, finely chopped</li>
+            <li>6 oz oyster mushrooms, sliced</li>
+            <li>2 oz maitake or shiitake mushrooms, sliced</li>
+            <li>1/2 cup sliced scallions, white and light green parts only</li>
+            <li>Two 1 1/4&ndash;1 1/2 lb boiled or steamed lobsters, meat removed and cut into bite-size pieces</li>
+            <li>1/4 cup chicken stock</li>
+            <li>1 tbsp soy sauce, more to taste</li>
+            <li>2 tsp rice wine vinegar, more to taste</li>
+            <li>1 1/2 tsp sesame oil</li>
+            <li>1/4 cup chopped fresh cilantro</li>
+            <li>Cooked rice, for serving (optional)</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Heat oil in large skillet over medium-high heat. Add ginger and garlic; cook, stirring, until fragrant, about 1 minute. Stir in mushrooms and scallions; cook, tossing occasionally, until soft and golden, about 4 minutes.</li>
+            <li>Stir in lobster, stock, soy sauce, vinegar, sesame oil. Cook until most of liquid has evaporated, 2 to 3 minutes. Taste and adjust seasonings. Stir in cilantro; serve immediately, over rice if you like.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Melissa Clark, The New York Times — via The Week, Jan 23, 2009</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 13: Broiled Lobster with Cajun Butter -->
+<div class="recipe" id="broiled-lobster-with-cajun-butter">
+    <div class="recipe-header">
+        <p class="recipe-title">Broiled Lobster with Cajun Butter</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 cup (2 sticks) unsalted butter, melted</li>
+            <li>1 tbsp kosher salt</li>
+            <li>1 1/2 tsp cayenne pepper</li>
+            <li>1 1/2 tsp paprika</li>
+            <li>1 tsp freshly ground black pepper</li>
+            <li>3/4 tsp onion powder</li>
+            <li>3/4 tsp dried thyme</li>
+            <li>1/2 tsp garlic powder</li>
+            <li>1/2 tsp dried oregano</li>
+            <li>1/6 tsp mustard powder</li>
+            <li>4 live lobsters, about 1 1/2 lbs each</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat broiler. Arrange oven rack 4 inches from heat source. To make Cajun butter, stir together all ingredients except lobsters in small bowl.</li>
+            <li>Place lobsters in bag in freezer for 15 minutes to slow their metabolism. Place a lobster on its back. Using a sharp knife and quick movement, slice lobster in half lengthwise from head to tip of tail. Grab both sides of shell and split open body, cracking through its hard back. Scoop out gray-green innards. Use back of heavy knife to crack open both claws. Repeat with remaining lobsters. (A fishmonger can do this if lobster meat is then cooked within an hour.)</li>
+            <li>Arrange lobsters in single layer in large roasting pan (or use 4 large gratin dishes). Coat body and claw meat generously with Cajun butter. Broil, basting once halfway through with pan juices, until lobster meat is cooked through and slightly charred, about 12 minutes. Remove lobsters from oven. Spoon pan juices over lobsters and serve.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">The Week, Jan 23, 2009</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+</body>
+</html>

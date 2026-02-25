@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natalie's Favorite Recipes — Main Courses — Poultry</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @media print { .recipe { page-break-after: always; } .recipe:last-child { page-break-after: avoid; } body { margin: 0; } }
+        body { font-family: 'Lato', Georgia, serif; color: #333; max-width: 7.5in; margin: 0 auto; padding: 0.5in; }
+        .recipe { padding: 0.25in 0; }
+        .recipe-header { border-bottom: 2px solid #8B0000; padding-bottom: 8px; margin-bottom: 16px; }
+        .recipe-title { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: bold; color: #8B0000; margin: 0; }
+        .recipe-meta { display: flex; gap: 32px; margin: 12px 0; font-size: 14px; background: #f9f5f0; padding: 8px 12px; border-radius: 4px; }
+        .meta-item { display: flex; gap: 6px; } .meta-label { font-weight: bold; }
+        h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #8B0000; margin: 20px 0 8px 0; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+        .ingredients ul { list-style: disc; padding-left: 24px; margin: 0; }
+        .ingredients li { font-size: 14px; line-height: 1.7; }
+        .directions ol { padding-left: 24px; margin: 0; }
+        .directions li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+        .recipe-footer { margin-top: 28px; padding-top: 10px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .recipe-source { font-size: 11px; font-style: italic; color: #999; }
+        .cookbook-stamp { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; color: #8B0000; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        h1.section-title { font-family: 'Playfair Display', Georgia, serif; text-align: center; font-size: 32px; color: #8B0000; border-bottom: 3px solid #8B0000; padding-bottom: 12px; margin-bottom: 0; }
+    
+        /* Table of Contents styles */
+        .toc {
+            page-break-after: always;
+            padding: 0.5in 0;
+        }
+        .toc h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 22px;
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin: 24px 0 16px 0;
+        }
+        .toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc li {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 16px;
+            line-height: 2.2;
+            border-bottom: 1px dotted #ccc;
+        }
+        .toc li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 2px 0;
+        }
+        .toc li a:hover {
+            color: #8B0000;
+        }
+        .toc li .toc-number {
+            color: #8B0000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="section-title">Main Courses &mdash; Poultry</h1>
+
+<div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#macaroni-shepherds-pie"><span class="toc-number">1.</span> Macaroni Shepherd's Pie</a></li>
+        <li><a href="#spicy-chicken-and-mango-stir-fry"><span class="toc-number">2.</span> Spicy Chicken and Mango Stir-Fry</a></li>
+        <li><a href="#greek-cinnamon-stewed-chicken"><span class="toc-number">3.</span> Greek Cinnamon Stewed Chicken</a></li>
+        <li><a href="#homemade-turkey-meatloaf-with-tomato-relish-smashed-potatoes-and-roasted-green-beans"><span class="toc-number">4.</span> Homemade Turkey Meatloaf with Tomato Relish, Smashed Potatoes and Roasted Green Beans</a></li>
+        <li><a href="#the-ultimate-sloppy-joes"><span class="toc-number">5.</span> The Ultimate Sloppy Joes</a></li>
+        <li><a href="#chicken-with-lemon-garlic-and-fresh-bay-leaves"><span class="toc-number">6.</span> Chicken with Lemon, Garlic and Fresh Bay Leaves</a></li>
+        <li><a href="#chicken-and-dumplings"><span class="toc-number">7.</span> Chicken and Dumplings</a></li>
+        <li><a href="#chicken-mirabella"><span class="toc-number">8.</span> Chicken Mirabella</a></li>
+        <li><a href="#roasted-garlic-teriyaki-chicken"><span class="toc-number">9.</span> Roasted Garlic Teriyaki Chicken</a></li>
+        <li><a href="#cornish-hens-with-sausage-stuffing"><span class="toc-number">10.</span> Cornish Hens with Sausage Stuffing</a></li>
+        <li><a href="#mar-a-lago-turkey-burger"><span class="toc-number">11.</span> Mar-a-Lago Turkey Burger</a></li>
+    </ol>
+</div>
+
+<!-- Recipe 1: Macaroni Shepherd's Pie -->
+<div class="recipe" id="macaroni-shepherds-pie">
+    <div class="recipe-header">
+        <p class="recipe-title">Macaroni Shepherd's Pie</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Turkey Base:</p>
+        <ul>
+            <li>2 pounds lean ground turkey</li>
+            <li>2 cloves garlic, minced</li>
+            <li>1 medium sweet onion, diced</li>
+            <li>2 Tbsp. flour</li>
+            <li>2 cups low-sodium chicken stock</li>
+            <li>2 tsp. fresh thyme</li>
+            <li>Extra-virgin olive oil</li>
+            <li>Kosher salt and freshly ground black pepper</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Remainder of Pie:</p>
+        <ul>
+            <li>2 cups elbow macaroni</li>
+            <li>2 cups frozen mixed vegetables</li>
+            <li>2 medium sweet onions</li>
+            <li>2 cloves garlic</li>
+            <li>1 bay leaf</li>
+            <li>2 cups low-sodium chicken stock</li>
+            <li>1 1/2 cups low-fat ricotta</li>
+            <li>2 cups shredded low-fat mozzarella</li>
+            <li>1/2 cup panko</li>
+            <li>1 tomato, thinly sliced</li>
+            <li>Chopped fresh parsley to finish</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li><strong>To make turkey base:</strong> Heat a 2-count of olive oil in a large saut&eacute; pan. Add garlic and turkey and brown well all over. Add onion and continue to cook until onion is lightly caramelized. Add thyme and season with salt and pepper. Dust with flour and combine well before adding stock. Continue to cook until slightly thickened. Taste once more and adjust seasoning if required.</li>
+            <li><strong>To make remainder of pie:</strong> Boil pasta in salted water until tender. Add frozen vegetables to a colander. Holding a strainer above the colander, pour out the pasta and water into the strainer so the hot water blanches the frozen vegetables.</li>
+            <li>In a pot, add chicken stock, bay leaf and chopped onion. Simmer for 15 minutes until liquid has reduced by half and onion is very tender. Remove bay leaf and puree in a blender. Add ricotta and season well with salt and pepper. Puree until smooth and thick. In a large mixing bowl, add cooked pasta, shredded mozzarella and pour over sauce. Combine well.</li>
+            <li>In a medium-size gratin dish or lasagna pan, add ground turkey, top with frozen vegetables and then pour over the sauced macaroni. Sprinkle with panko and top with slices of tomato. Bake in a preheated 350&deg; oven for 20 to 25 minutes until golden brown. Finish with freshly chopped parsley.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe created by Tyler Florence — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 2: Spicy Chicken and Mango Stir-Fry -->
+<div class="recipe" id="spicy-chicken-and-mango-stir-fry">
+    <div class="recipe-header">
+        <p class="recipe-title">Spicy Chicken and Mango Stir-Fry</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Marinade and Chicken:</p>
+        <ul>
+            <li>1/4 cup soy sauce</li>
+            <li>2 cloves garlic, minced</li>
+            <li>3/4 pound boneless, skinless chicken, sliced into 1/2-inch thick strips</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Stir-Fry:</p>
+        <ul>
+            <li>1 Tbsp. olive oil</li>
+            <li>2 medium onions, diced</li>
+            <li>1 cup frozen broccoli</li>
+            <li>1/2 cup frozen snow peas</li>
+            <li>1/2 cup frozen mangoes, sliced</li>
+            <li>Soy sauce, if needed</li>
+            <li>1 Tbsp. coarsely chopped fresh cilantro</li>
+            <li>1 Tbsp. chopped scallions</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>In a Pyrex dish or bowl, combine the soy sauce and garlic. Place the chicken into the dish, cover and refrigerate for several hours or overnight to marinate.</li>
+            <li>Heat the oil in a wok or large saut&eacute; pan over high heat. Add the chicken, marinade and onion, and saut&eacute; quickly until chicken is cooked through. Add in broccoli and turn heat to medium-high. Cook for 3 to 4 minutes. Toss in snow peas and mangoes with their juices and cook for 2 to 3 minutes. Toss in the cilantro and scallions and serve.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe created by Cat Cora — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 3: Greek Cinnamon Stewed Chicken -->
+<div class="recipe" id="greek-cinnamon-stewed-chicken">
+    <div class="recipe-header">
+        <p class="recipe-title">Greek Cinnamon Stewed Chicken</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 chicken (2 1/2 to 3 pounds), cut into 8 pieces (legs, breast and thighs)</li>
+            <li>1 tsp. ground cinnamon</li>
+            <li>2 tsp. kosher salt</li>
+            <li>1 tsp. freshly ground black pepper</li>
+            <li>5 cloves garlic, peeled and minced</li>
+            <li>2 Tbsp. extra-virgin olive oil</li>
+            <li>1 large yellow onion, peeled and coarsely chopped</li>
+            <li>2 cups water</li>
+            <li>1 can (6 ounces) tomato paste</li>
+            <li>1 Tbsp. dried Italian herb seasoning</li>
+            <li>1 cup orzo, cooked according to package directions</li>
+            <li>1/2 cup grated Parmesan cheese</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preboil water with sea salt. Pat the chicken dry with paper towels. A wet chicken will cause the oil to splatter while the chicken is saut&eacute;ing. Mix the cinnamon, salt and pepper in a small bowl. Rub the chicken pieces on all sides with the seasoning.</li>
+            <li>Heat the olive oil in a large, nonreactive, deep skillet over high heat. A 12-inch skillet with sides about 2 1/2 to 3 inches high will allow you to brown all the chicken at once. If you don't have a skillet large enough, brown them in two batches using 1/2 the oil for each batch. What's important is that the chicken isn't overcrowded, which would cause them to steam rather than brown.</li>
+            <li>Add the chicken to the oil and brown for about 4 to 5 minutes on each side. Turn the pieces using a metal spatula, as they have a tendency to stick to the pan. Remove the pieces when they are well browned on all sides.</li>
+            <li>Mince three of the garlic cloves. Lower the heat to medium-high, and add the onions and minced garlic. Cook for about 3 minutes, stirring constantly, until the onions have softened and are a rich golden brown. Add about 1/2 cup of the water and scrape the bottom of the pan with a spatula or spoon to deglaze the pan, loosening any particles stuck on the bottom.</li>
+            <li>When the water has evaporated, add the remaining 1 1/2 cups of water, tomato paste, Italian seasoning and remaining 2 garlic cloves, minced.</li>
+            <li>Return the chicken to the pan. The liquid should cover about 3/4 of the chicken pieces. Cover the pot and simmer over medium-high heat for about 30 to 40 minutes, or until the chicken is tender and thoroughly cooked. If the sauce becomes too thick, it can be thinned with a little more water. Season the finished sauce with kosher salt and pepper to taste. Serve over orzo, cooked according to package directions, and sprinkle Parmesan cheese on top.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe created by Cat Cora — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 4: Homemade Turkey Meatloaf with Tomato Relish, Smashed Potatoes and Roasted Green Beans -->
+<div class="recipe" id="homemade-turkey-meatloaf-with-tomato-relish-smashed-potatoes-and-roasted-green-beans">
+    <div class="recipe-header">
+        <p class="recipe-title">Homemade Turkey Meatloaf with Tomato Relish, Smashed Potatoes and Roasted Green Beans</p>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Tomato Relish:</p>
+        <ul>
+            <li>Extra-virgin olive oil</li>
+            <li>1 onion, finely diced</li>
+            <li>2 cloves garlic, minced</li>
+            <li>2 bay leaves</li>
+            <li>2 red bell peppers, cored, seeded and finely diced</li>
+            <li>2 tomatoes, halved, seeded and finely diced</li>
+            <li>1/4 cup fresh flat-leaf parsley, chopped</li>
+            <li>1 bottle (12 ounces) ketchup</li>
+            <li>1 Tbsp. Worcestershire sauce</li>
+            <li>Kosher salt and freshly ground pepper</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Meatloaf:</p>
+        <ul>
+            <li>2 pounds ground turkey</li>
+            <li>3 eggs</li>
+            <li>2 fresh thyme sprigs, leaves removed</li>
+            <li>Sea salt and freshly ground black pepper</li>
+            <li>3 slices white bread, crusts removed and torn into pieces</li>
+            <li>1/2 cup whole milk</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Vegetables:</p>
+        <ul>
+            <li>2 pounds Yukon gold potatoes</li>
+            <li>2 pounds green beans</li>
+            <li>1/2 cup light extra-virgin olive oil</li>
+            <li>1 1/2 Tbsp. kosher salt</li>
+            <li>1 tsp. ground black pepper</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat the oven to 350&deg;. Coat a skillet with a 2-count of oil and place over medium heat. Saut&eacute; the onion, garlic and bay leaves for a few minutes to create a base flavor. Throw in the red peppers and cook them for a couple of minutes to soften. Now add the tomatoes. (Adding them at this point lets them hold their shape and prevents them from disintegrating.) Stir in the parsley, ketchup and Worcestershire sauce. Season with salt and pepper. Simmer the relish for 10 minutes to pull all the flavors together. Remove it from the heat. You should have about 4 cups of relish.</li>
+            <li>In a large mixing bowl, soak the bread pieces in the whole milk. Set aside. In a separate large mixing bowl, combine the ground turkey and mix well. Squeeze out the milk from the bread and add the bread to mixing bowl. Add the eggs, 1 cup of the tomato relish and thyme, and season with salt and pepper. Mix well with hands. To test, fry a small "hamburger" patty of the meatloaf until cooked. The patty should hold together but still have a soft consistency. Taste the patty for seasoning.</li>
+            <li>Take a small baking tray and line with parchment paper. Form the meat into a loaf shape on the tray and top with another 1/2 cup of the tomato relish. Bake the meatloaf for 1 to 1 1/2 hours until the juices run clear and meat is tender&mdash;it should spring back lightly when pressed. Remove the meatloaf from the oven, and let it cool a bit before slicing.</li>
+            <li>Boil potatoes in salty water and drain when tender. Break the potatoes up with a wooden spoon or potato masher to give a chunky consistency. Drizzle in the olive oil and season with salt and pepper. Roast the green beans on a roasting tray with salt and pepper until tender.</li>
+            <li>To serve, slice the meatloaf into thick slices and serve over the potatoes with a handful of the green beans and some of the remaining tomato relish on the side.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Tyler Florence — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 5: The Ultimate Sloppy Joes -->
+<div class="recipe" id="the-ultimate-sloppy-joes">
+    <div class="recipe-header">
+        <p class="recipe-title">The Ultimate Sloppy Joes</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>Extra-virgin olive oil</li>
+            <li>1 large onion, diced</li>
+            <li>1 1/2 pounds lean ground turkey</li>
+            <li>Kosher salt and freshly ground black pepper</li>
+            <li>2 cups ketchup</li>
+            <li>1/4 cup yellow mustard</li>
+            <li>1/4 tsp. cayenne pepper</li>
+            <li>1 Tbsp. brown sugar</li>
+            <li>2 Tbsp. tomato paste</li>
+            <li>1 Tbsp. apple cider vinegar</li>
+            <li>5 whole wheat hamburger buns</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Set a heavy-based pot over medium-high heat and add a 3-count of olive oil. Add onions and saut&eacute; for 2 to 3 minutes until translucent. Add ground turkey, season well with salt and pepper and brown well all over, breaking it up with a wooden spoon&mdash;about 7 to 10 minutes.</li>
+            <li>Add ketchup, mustard, cayenne, brown sugar and tomato paste. Reduce heat and simmer for 10 to 12 minutes. Finish with a splash of apple cider vinegar and season it once more before serving on toasted whole wheat hamburger buns.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe created by Tyler Florence — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 6: Chicken with Lemon, Garlic and Fresh Bay Leaves -->
+<div class="recipe" id="chicken-with-lemon-garlic-and-fresh-bay-leaves">
+    <div class="recipe-header">
+        <p class="recipe-title">Chicken with Lemon, Garlic and Fresh Bay Leaves</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 large free-range, organic chicken</li>
+            <li>1 lemon, cut in half</li>
+            <li>1 head garlic, cut through the equator</li>
+            <li>1 branch fresh bay leaves</li>
+            <li>1/2 bunch fresh thyme</li>
+            <li>Kosher salt</li>
+            <li>Freshly ground black pepper</li>
+            <li>Extra-virgin olive oil</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Clean chicken and season cavity well with plenty of kosher salt and freshly ground black pepper. Stuff cavity with lemon, garlic, thyme and bay leaf, then tie bird up with kitchen twine. Rub outside with olive oil, and season with salt and pepper.</li>
+            <li>Roast in 350&deg; oven for 60 to 75 minutes until golden brown and juices run clear. Cook lemon-roasted potatoes under the chicken in a roasting pan, placed so it can catch the chicken drippings as it cooks.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe created by Tyler Florence — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 7: Chicken and Dumplings -->
+<div class="recipe" id="chicken-and-dumplings">
+    <div class="recipe-header">
+        <p class="recipe-title">Chicken and Dumplings</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Chicken and Stock:</p>
+        <ul>
+            <li>1 whole organic chicken, 4 to 5 pounds</li>
+            <li>2 bay leaves</li>
+            <li>1 head garlic, split through the equator</li>
+            <li>6 sprigs thyme</li>
+            <li>Kosher salt</li>
+            <li>4 to 5 black peppercorns</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Vegetables:</p>
+        <ul>
+            <li>2 carrots</li>
+            <li>1 large onion</li>
+            <li>2 ribs celery</li>
+            <li>1 clove garlic</li>
+            <li>4 sprigs fresh thyme, leaves only</li>
+            <li>Extra-virgin olive oil</li>
+            <li>1/2 cup chopped flat-leaf parsley</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Buttermilk-Chive Dumplings:</p>
+        <ul>
+            <li>2 cups flour</li>
+            <li>1 Tbsp. baking powder</li>
+            <li>1 tsp. salt</li>
+            <li>2 eggs</li>
+            <li>3/4 to 1 cup buttermilk</li>
+            <li>1/4 cup chopped chives</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li><strong>To make chicken:</strong> Place chicken and all ingredients into a slow cooker and cover with water. Set on low (according to manufacturer's instructions), and cook until chicken is falling apart.</li>
+            <li>When done, remove the chicken. Strain the stock and shred the meat into big pieces.</li>
+            <li><strong>To make vegetables:</strong> Slice vegetables up into a julienne, and set a large saut&eacute; pan over high heat. Add a 2-count of olive oil, and saut&eacute; vegetables until translucent. Fold vegetables into the slow cooker with the stock. Fold the shredded chicken back into the mixture and season well. Add chopped fresh parsley and stir. Turn slow cooker up to high while you make the dumplings.</li>
+            <li><strong>To make dumplings:</strong> Sift dry ingredients together in a large bowl. In a small bowl, lightly beat the eggs and milk together; pour the liquid in the dry ingredients and gently fold.</li>
+            <li>Mix just until the dough comes together&mdash;the batter should be thick and cake-like. Using a small ice cream scoop, make dumplings and layer into the slow-cooker. Place the lid back on. Turn cooker up to high and leave for 30 minutes until the dumplings are cooked and puffed up slightly.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe created by Tyler Florence — Oprah.com</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 8: Chicken Mirabella -->
+<div class="recipe" id="chicken-mirabella">
+    <div class="recipe-header">
+        <p class="recipe-title">Chicken Mirabella</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>3 cloves garlic</li>
+            <li>1/3 cup pitted prunes, halved</li>
+            <li>8 small green olives</li>
+            <li>2 tbsp. capers with liquid</li>
+            <li>2 tbsp. olive oil</li>
+            <li>2 tbsp. red wine vinegar</li>
+            <li>1/4 cup dry white wine</li>
+            <li>2 bay leaves</li>
+            <li>1 tbsp. dried oregano</li>
+            <li>Salt and pepper to taste</li>
+            <li>6 boneless, skinless chicken breasts</li>
+            <li>1/4 cup packed brown sugar</li>
+            <li>1 tbsp. chopped fresh parsley (for garnish)</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>In a medium bowl, combine the garlic, prunes, olives, capers, olive oil, vinegar, white wine, bay leaves, oregano, salt and pepper. Mix well. Add the chicken breasts. Cover and refrigerate overnight.</li>
+            <li>When ready to cook, preheat to 350&deg;F. Pour contents of bowl into 9 x 13 baking dish. Sprinkle brown sugar on top. Bake in preheated oven for 1 hour, spooning juices over chicken several times as it is baking.</li>
+            <li>Serve on a platter, pouring juices over the top, and garnish with fresh parsley.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Courtesy of Savory Solutions</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 9: Roasted Garlic Teriyaki Chicken -->
+<div class="recipe" id="roasted-garlic-teriyaki-chicken">
+    <div class="recipe-header">
+        <p class="recipe-title">Roasted Garlic Teriyaki Chicken</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>2/3 cup Kikkoman Roasted Garlic Teriyaki Marinade &amp; Sauce</li>
+            <li>1 tablespoon brown sugar, packed</li>
+            <li>1 tablespoon vegetable oil</li>
+            <li>6 boneless, skinless chicken breast halves</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Combine roasted garlic teriyaki sauce, brown sugar and oil, stirring until sugar dissolves. Pour mixture over chicken in large plastic food storage bag.</li>
+            <li>Press air out of bag; close top securely. Turn bag over several times to coat chicken. Refrigerate 2 hours, turning bag over once.</li>
+            <li>Remove chicken from marinade; discard marinade. Grill chicken 4 to 5 inches from hot coals 12 to 15 minutes, or until chicken is no longer pink in center, turning over occasionally.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Kikkoman</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 10: Cornish Hens with Sausage Stuffing -->
+<div class="recipe" id="cornish-hens-with-sausage-stuffing">
+    <div class="recipe-header">
+        <p class="recipe-title">Cornish Hens with Sausage Stuffing</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Cook:</span> 1 hr</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>6 to 8 ounces bulk pork sausage</li>
+            <li>2 cups toasted bread cubes</li>
+            <li>1 cup chopped apples</li>
+            <li>1/2 cup thinly sliced celery</li>
+            <li>1/4 cup raisins</li>
+            <li>1/3 cup chopped onion</li>
+            <li>3/4 cup melted butter or margarine, divided</li>
+            <li>5 tablespoons chicken broth, divided</li>
+            <li>1/4 teaspoon dried leaf sage, crumbled</li>
+            <li>1/4 teaspoon poultry seasoning</li>
+            <li>1/4 teaspoon salt</li>
+            <li>Dash pepper</li>
+            <li>6 Cornish game hens, about 1 to 1 1/2 pounds each</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Brown sausage well then drain off grease. Add bread cubes, apples, celery, raisins, onion, 1/4 cup of the melted butter or margarine, 2 tablespoons of the chicken broth, sage, poultry seasoning, and salt; mix well. In a separate cup, combine remaining 1/2 cup melted butter and 3 tablespoons chicken broth. Set aside to use for basting.</li>
+            <li>Lightly stuff Cornish hens with dressing mixture; close openings with skewers. Place hens in a large roasting pan; bake at 400&deg;F for 1 hour, or until the Cornish hens are tender. Baste Cornish hens occasionally with combined remaining margarine and chicken broth.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Diana Rattray, About.com Southern Food</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 11: Mar-a-Lago Turkey Burger -->
+<div class="recipe" id="mar-a-lago-turkey-burger">
+    <div class="recipe-header">
+        <p class="recipe-title">Mar-a-Lago Turkey Burger</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1/4 cup scallions, thinly sliced</li>
+            <li>1/2 cup celery, finely chopped</li>
+            <li>3 Granny Smith apples, peeled and diced</li>
+            <li>1/8 cup canola oil</li>
+            <li>4 pounds ground turkey breast</li>
+            <li>2 Tbsp. salt</li>
+            <li>1 Tbsp. black pepper</li>
+            <li>2 tsp. chipotle Tabasco</li>
+            <li>1 lemon, juice and grated zest</li>
+            <li>1/2 bunch parsley, finely chopped</li>
+            <li>1/4 cup Major Grey's Chutney, pureed</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Saut&eacute; the scallions, celery and apples in the canola oil until tender. Let cool.</li>
+            <li>Place the ground turkey in a large mixing bowl. Add saut&eacute;ed items and the remaining ingredients. Shape into eight 8-ounce burgers. Refrigerate for 2 hours.</li>
+            <li>Season the turkey burgers with salt and pepper. Place on a preheated, lightly oiled grill. Grill each side for 7 minutes until meat is thoroughly cooked. Let sit for 5 minutes.</li>
+            <li>Serve with a side of Mar-a-Lago Pear Chutney.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Jeff O'Neill — Oprah's Top Picks for Summer</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+</body>
+</html>

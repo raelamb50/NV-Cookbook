@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natalie's Favorite Recipes — Desserts</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            .recipe { page-break-after: always; }
+            .recipe:last-child { page-break-after: avoid; }
+            body { margin: 0; }
+        }
+        body {
+            font-family: 'Lato', Georgia, serif;
+            color: #333;
+            max-width: 7.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        .recipe { padding: 0.25in 0; }
+        .recipe-header {
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .recipe-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #8B0000;
+            margin: 0;
+        }
+        .recipe-meta {
+            display: flex;
+            gap: 32px;
+            margin: 12px 0;
+            font-size: 14px;
+            background: #f9f5f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        .meta-item { display: flex; gap: 6px; }
+        .meta-label { font-weight: bold; }
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 18px;
+            color: #8B0000;
+            margin: 20px 0 8px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+        .ingredients ul { list-style: disc; padding-left: 24px; margin: 0; }
+        .ingredients li { font-size: 14px; line-height: 1.7; }
+        .directions ol { padding-left: 24px; margin: 0; }
+        .directions li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+        .recipe-footer {
+            margin-top: 28px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .recipe-source { font-size: 11px; font-style: italic; color: #999; }
+        .cookbook-stamp {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 11px;
+            color: #8B0000;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        h1.section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 32px;
+            color: #8B0000;
+            border-bottom: 3px solid #8B0000;
+            padding-bottom: 12px;
+            margin-bottom: 0;
+        }
+    
+        /* Table of Contents styles */
+        .toc {
+            page-break-after: always;
+            padding: 0.5in 0;
+        }
+        .toc h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 22px;
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin: 24px 0 16px 0;
+        }
+        .toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc li {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 16px;
+            line-height: 2.2;
+            border-bottom: 1px dotted #ccc;
+        }
+        .toc li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 2px 0;
+        }
+        .toc li a:hover {
+            color: #8B0000;
+        }
+        .toc li .toc-number {
+            color: #8B0000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="section-title">Desserts</h1>
+
+<div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#white-chocolate-dandy-meyer-lemon-tart"><span class="toc-number">1.</span> White Chocolate &amp; Dandy Meyer Lemon Tart</a></li>
+        <li><a href="#homemade-irish-cream-liqueur"><span class="toc-number">2.</span> Homemade Irish Cream Liqueur</a></li>
+        <li><a href="#apricot-and-nut-cookies-with-amaretto-icing"><span class="toc-number">3.</span> Apricot and Nut Cookies with Amaretto Icing</a></li>
+        <li><a href="#caramel-custard"><span class="toc-number">4.</span> Caramel Custard</a></li>
+        <li><a href="#chocolate-blackout-cake"><span class="toc-number">5.</span> Chocolate Blackout Cake</a></li>
+        <li><a href="#molten-lava-cakes"><span class="toc-number">6.</span> Molten Lava Cakes</a></li>
+        <li><a href="#creme-caramel"><span class="toc-number">7.</span> Creme Caramel</a></li>
+        <li><a href="#black-and-white-cookies"><span class="toc-number">8.</span> Black and White Cookies</a></li>
+    </ol>
+</div>
+
+<!-- Recipe 1: White Chocolate & Dandy Meyer Lemon Tart -->
+<div class="recipe" id="white-chocolate-dandy-meyer-lemon-tart">
+    <div class="recipe-header">
+        <p class="recipe-title">White Chocolate &amp; Dandy Meyer Lemon Tart</p>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>3 large eggs</li>
+            <li>1/2 cup sugar</li>
+            <li>1 cup heavy cream</li>
+            <li>2 Dandy Meyer lemons, juiced</li>
+            <li>4 ounces white chocolate, cut into 1/2" pieces</li>
+            <li>1 9" baked pie or tart shell</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>In a medium stainless steel bowl, beat the eggs until blended. Stir in sugar and then Meyer lemon juice.</li>
+            <li>Cook over boiling water, stirring continuously with a wire whisk until mixture thickens, resembling pudding.</li>
+            <li>Remove from the heat and stir in white chocolate until melted and completely incorporated. Set aside and cool at room temperature. Cover and chill.</li>
+            <li>Whip the cream to firm peaks. Fold the cool Meyer lemon mixture into the cream and spoon into baked pie or tart shell.</li>
+            <li>Chill 2 hours or until firm before serving. If desired, garnish with extra whipped cream before serving.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Dandy Meyer Lemons recipe card</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 2: Homemade Irish Cream Liqueur -->
+<div class="recipe" id="homemade-irish-cream-liqueur">
+    <div class="recipe-header">
+        <p class="recipe-title">Homemade Irish Cream Liqueur</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Yield:</span> about 5 cups</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1-3/4 cups Irish Whiskey</li>
+            <li>1 (14-ounce) can Eagle Brand Sweetened Condensed Milk (NOT evaporated milk)</li>
+            <li>1 cup (1/2 pint) whipping or light cream</li>
+            <li>4 eggs</li>
+            <li>2 tablespoons chocolate flavored syrup</li>
+            <li>2 teaspoons instant coffee</li>
+            <li>1 teaspoon vanilla extract</li>
+            <li>1/2 teaspoon almond extract</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>In blender container, combine all ingredients; blend until smooth.</li>
+            <li>Store tightly covered in refrigerator up to 1 month. Stir before serving. Return leftovers to refrigerator.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Eagle Brand recipe clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 3: Apricot and Nut Cookies with Amaretto Icing -->
+<div class="recipe" id="apricot-and-nut-cookies-with-amaretto-icing">
+    <div class="recipe-header">
+        <p class="recipe-title">Apricot and Nut Cookies with Amaretto Icing</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Cook:</span> 15 min</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Easy</div>
+        <div class="meta-item"><span class="meta-label">Yield:</span> 2 to 2 1/2 dozen cookies</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Cookies</h2>
+        <ul>
+            <li>1/2 cup (1 stick) unsalted butter, at room temperature</li>
+            <li>1/2 cup plus 2 tablespoons sugar</li>
+            <li>1 teaspoon pure vanilla extract</li>
+            <li>1/4 teaspoon ground cinnamon</li>
+            <li>1/4 teaspoon fine sea salt</li>
+            <li>1 large egg</li>
+            <li>1 1/4 cups all-purpose flour</li>
+            <li>1/2 cup dried apricots, coarsely chopped</li>
+            <li>1/4 cup slivered almonds, toasted</li>
+            <li>2 tablespoons pine nuts, toasted</li>
+        </ul>
+        <h2>Icing</h2>
+        <ul>
+            <li>1 3/4 cups confectioners' sugar</li>
+            <li>5 to 7 tablespoons almond flavored liqueur (recommended: Amaretto)</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>For the cookies: In a large bowl, beat the butter, sugar, vanilla, cinnamon, and salt with an electric mixer until light and fluffy, about 2 minutes. Beat in the egg. Stir in the flour until just blended. Mix in the apricots, almonds, and pine nuts.</li>
+            <li>Transfer the dough to a sheet of plastic wrap and shape into a log, about 12 inches long and 1 1/2 inches in diameter. Wrap the dough in the plastic and refrigerate for 2 hours.</li>
+            <li>Preheat the oven to 350 degrees F. Line 2 heavy baking sheets with parchment paper.</li>
+            <li>Cut the dough log crosswise into 1/4 to 1/2 inch-thick slices. Transfer the cookies to the prepared baking sheets, spacing evenly apart. Bake until the cookies are golden around the edges, about 15 minutes. Transfer the cookies to a wire rack to cool completely before icing.</li>
+            <li>For the icing: Place the confectioners' sugar in a medium mixing bowl. Gradually whisk in the almond flavored liqueur, until the mixture is of drizzling consistency.</li>
+            <li>Place the wire rack over a baking sheet. Using a spoon or fork, drizzle the cookies with the icing, allowing any excess icing to drip onto the baking sheet. Allow the icing to set before serving, about 30 minutes.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Giada De Laurentiis, 2008 — Everyday Italian, Food Network</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 4: Caramel Custard -->
+<div class="recipe" id="caramel-custard">
+    <div class="recipe-header">
+        <p class="recipe-title">Caramel Custard</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 25 min</div>
+        <div class="meta-item"><span class="meta-label">Total:</span> 1 hr 40 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1/2 cup sugar</li>
+            <li>3 eggs, slightly beaten</li>
+            <li>1/3 cup sugar</li>
+            <li>1 teaspoon vanilla</li>
+            <li>1/8 teaspoon salt</li>
+            <li>2 1/2 cups very warm milk</li>
+            <li>Ground nutmeg</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Heat oven to 350°F.</li>
+            <li>Heat 1/2 cup sugar in heavy 1-quart saucepan over low heat, stirring constantly, until sugar is melted and golden brown. Divide sugar syrup among six 6-ounce custard cups; tilt cups to coat bottoms. Allow syrup to harden in cups about 10 minutes.</li>
+            <li>Mix eggs, 1/3 cup sugar, the vanilla and salt in medium bowl. Gradually stir in milk. Pour over syrup in cups. Sprinkle with nutmeg.</li>
+            <li>Place cups in rectangular pan, 13x9x2 inches, on oven rack. Pour very hot water into pan to within 1/2 inch of tops of cups.</li>
+            <li>Bake about 45 minutes or until knife inserted halfway between center and edge comes out clean. Remove cups from water. Cool 30 minutes. Cover and refrigerate until serving or up to 48 hours.</li>
+            <li>To unmold, carefully loosen side of custard with knife or small spatula. Place dessert dish or plate on top of cup and, holding tightly, turn dish and cup upside down. Shake cup gently to loosen custard. Caramel syrup will run down sides of custard, forming a sauce.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Betty Crocker</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 5: Chocolate Blackout Cake -->
+<div class="recipe" id="chocolate-blackout-cake">
+    <div class="recipe-header">
+        <p class="recipe-title">Chocolate Blackout Cake</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 10 to 12</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Pudding</h2>
+        <ul>
+            <li>1 1/2 cups granulated sugar</li>
+            <li>1/3 cup cornstarch</li>
+            <li>1/2 teaspoon table salt</li>
+            <li>2 cups half-and-half</li>
+            <li>1 cup whole milk</li>
+            <li>6 oz unsweetened chocolate, chopped</li>
+            <li>2 tsp vanilla extract</li>
+        </ul>
+        <h2>Cake</h2>
+        <ul>
+            <li>8 tbsp unsalted butter (1 stick), plus extra for greasing pans</li>
+            <li>1 1/2 cups all-purpose flour, plus extra for dusting pans</li>
+            <li>2 tsp baking powder</li>
+            <li>1/2 tsp baking soda</li>
+            <li>1/2 tsp table salt</li>
+            <li>3/4 cup Dutch-processed cocoa powder</li>
+            <li>1 cup strong black coffee</li>
+            <li>1 cup buttermilk</li>
+            <li>1 cup packed light brown sugar</li>
+            <li>1 cup granulated sugar</li>
+            <li>2 large eggs</li>
+            <li>1 tsp vanilla extract</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li><strong>For the pudding:</strong> Whisk sugar, cornstarch, salt, half-and-half, and milk in large saucepan. Set pan over medium heat. Add chocolate and whisk constantly until chocolate melts and mixture begins to bubble, 2 to 4 minutes. Stir in vanilla and transfer pudding to large bowl. Place plastic wrap directly on surface of pudding and refrigerate until cold, at least 4 hours and up to 1 day.</li>
+            <li><strong>For the cake layers:</strong> Adjust oven rack to middle position and heat oven to 325 degrees. Butter and flour two 8-inch cake pans. Whisk flour, baking powder, baking soda, and salt in bowl. Melt butter in large saucepan over medium heat. Stir in cocoa and cook until fragrant, about 1 minute. Off heat, whisk in coffee, buttermilk, and sugars until dissolved. Whisk in eggs and vanilla, then slowly whisk in flour mixture. Divide batter evenly between prepared pans and bake until toothpick inserted in center comes out clean, 30 to 35 minutes. Cool layers in pans 15 minutes, then invert onto wire rack. Cool to room temperature, at least 1 hour.</li>
+            <li><strong>To assemble the cake:</strong> Cut each cake in half horizontally. Crumble one cake layer into medium crumbs and set aside. Place one cake layer on serving platter or cardboard round. Spread 1 cup pudding over cake layer and top with another layer. Repeat with 1 cup pudding and last cake layer. Spread remaining pudding evenly over top and sides of cake. Sprinkle cake crumbs evenly over top and sides of cake, pressing lightly so crumbs adhere. Serve. (Cake can be refrigerated for up to 2 days.)</li>
+        </ol>
+        <p style="font-size: 13px; font-style: italic; margin-top: 12px; color: #555;"><strong>Tip:</strong> Give the pudding and the cake enough time to cool or you'll end up with runny pudding and gummy cake.</p>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Cook's Country via The Week, February 29, 2008</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 6: Molten Lava Cakes -->
+<div class="recipe" id="molten-lava-cakes">
+    <div class="recipe-header">
+        <p class="recipe-title">Molten Lava Cakes</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 14 min</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Easy</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6 cakes</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>6 (1-ounce) squares bittersweet chocolate</li>
+            <li>2 (1-ounce) squares semisweet chocolate</li>
+            <li>10 tablespoons (1 1/4 stick) butter</li>
+            <li>1/2 cup all-purpose flour</li>
+            <li>1 1/2 cups confectioners' sugar</li>
+            <li>3 large eggs</li>
+            <li>3 egg yolks</li>
+            <li>1 teaspoon vanilla extract</li>
+            <li>2 tablespoons orange liqueur</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 425 degrees F.</li>
+            <li>Grease 6 (6-ounce) custard cups. Melt the chocolates and butter in the microwave, or in a double boiler. Add the flour and sugar to chocolate mixture.</li>
+            <li>Stir in the eggs and yolks until smooth. Stir in the vanilla and orange liqueur.</li>
+            <li>Divide the batter evenly among the custard cups. Place in the oven and bake for 14 minutes. The edges should be firm but the center will be runny.</li>
+            <li>Run a knife around the edges to loosen and invert onto dessert plates.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Paula Deen — Food Network</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 7: Creme Caramel -->
+<div class="recipe" id="creme-caramel">
+    <div class="recipe-header">
+        <p class="recipe-title">Creme Caramel</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 10 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 1 hr</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Easy</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 8</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 cup sugar</li>
+            <li>5 eggs</li>
+            <li>1/4 teaspoon salt</li>
+            <li>3 cups milk</li>
+            <li>1 teaspoon vanilla</li>
+            <li>Fresh whipped cream, for garnish</li>
+            <li>Sprigs of mint, for garnish</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 350 degrees F.</li>
+            <li>Butter 8 (6-ounce) custard cups. In a small skillet over medium heat, melt 1/2 cup sugar with a couple drops of water, stirring constantly until it is a light brown syrup. Pour syrup into buttered cups. Place cups in baking pan for easy handling.</li>
+            <li>In large bowl with mixer at low speed, beat eggs, salt, and remaining 1/2 cup sugar until lemon-colored. Gradually beat in milk and vanilla. Once mixture has settled, with all air bubbles out, pour mixture into cups.</li>
+            <li>Pour hot water into baking pan to within 1-inch of top of cups. Bake 1 hour or until knife inserted in center comes out clean. Cool, loosen custard with knife; invert.</li>
+        </ol>
+        <p style="font-size: 13px; font-style: italic; margin-top: 12px; color: #555;"><strong>Cook's Note:</strong> Try sprinkling ground nutmeg on each custard before baking.</p>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Paula Deen — Food Network</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 8: Black and White Cookies -->
+<div class="recipe" id="black-and-white-cookies">
+    <div class="recipe-header">
+        <p class="recipe-title">Black and White Cookies</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 15 min</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Easy</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> about 36 to 40 cookies</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1/3 cup cream</li>
+            <li>7 ounces dark chocolate, chopped into small pieces</li>
+            <li>3/4 cup sugar</li>
+            <li>1 (18-ounce) package sugar cookie dough</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Place a small pan over medium heat. Add the cream and warm until almost boiling, about 3 minutes. Turn off the heat and add the chocolate. Stir for 1 to 2 minutes until the chocolate melts. Place the chocolate mixture into a small bowl. Cool the chocolate until firm enough to roll into balls. (To cool quickly, place the chocolate in the refrigerator for about 1 hour.)</li>
+            <li>Once the chocolate is firm, preheat the oven to 350 degrees F.</li>
+            <li>Place the sugar in an empty pie dish. Roll the chocolate into teaspoon-sized balls and set aside. Roll a walnut-sized ball of cookie dough into a thin log about 3 inches long. Place a chocolate ball on a work surface and wrap a cookie dough log around the chocolate ball and press to adhere. It should look like a cookie version of the planet Saturn. Roll the cookie in the sugar to coat.</li>
+            <li>Place the cookie on a large baking sheet and continue forming the remaining cookies and rolling them in sugar. Once all the cookie balls are on the baking sheets, use the bottom of a drinking glass to flatten the cookies to about 1/4 inch thick.</li>
+            <li>Bake the cookies for 15 minutes. Transfer the cookies to a wire rack to cool, then serve.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Giada De Laurentiis — Food Network</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+</body>
+</html>

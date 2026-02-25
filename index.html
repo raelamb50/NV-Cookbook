@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Natalie's Favorite Recipes</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after { box-sizing: border-box; }
+
+        body {
+            font-family: 'Lato', Georgia, serif;
+            color: #333;
+            margin: 0;
+            padding: 0;
+            background: #faf8f5;
+        }
+
+        /* Header */
+        .site-header {
+            background: #fff;
+            border-bottom: 3px solid #8B0000;
+            padding: 32px 24px 0;
+            text-align: center;
+        }
+        .site-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 38px;
+            font-weight: 700;
+            color: #8B0000;
+            margin: 0 0 4px;
+        }
+        .site-subtitle {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 14px;
+            color: #999;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+            margin: 0 0 24px;
+        }
+
+        /* Tab bar */
+        .tab-bar {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 0;
+            margin: 0 auto;
+            max-width: 1100px;
+        }
+        .tab-btn {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 13px;
+            font-weight: 700;
+            color: #666;
+            background: none;
+            border: none;
+            padding: 10px 16px;
+            cursor: pointer;
+            border-bottom: 3px solid transparent;
+            margin-bottom: -3px;
+            transition: color 0.2s, border-color 0.2s;
+            white-space: nowrap;
+        }
+        .tab-btn:hover {
+            color: #8B0000;
+        }
+        .tab-btn.active {
+            color: #8B0000;
+            border-bottom-color: #8B0000;
+        }
+
+        /* Content area */
+        .content-area {
+            max-width: 7.5in;
+            margin: 0 auto;
+            padding: 24px 24px 60px;
+            background: #fff;
+            min-height: 60vh;
+        }
+
+        /* Loading state */
+        .loading {
+            text-align: center;
+            padding: 80px 0;
+            color: #999;
+            font-size: 16px;
+        }
+        .loading::after {
+            content: '';
+            display: block;
+            width: 32px;
+            height: 32px;
+            margin: 16px auto 0;
+            border: 3px solid #eee;
+            border-top-color: #8B0000;
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+        }
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+
+        /* Error state */
+        .error {
+            text-align: center;
+            padding: 80px 0;
+            color: #c00;
+            font-size: 16px;
+        }
+
+        /* Injected recipe content inherits these styles */
+        .content-area .section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 32px;
+            color: #8B0000;
+            border-bottom: 3px solid #8B0000;
+            padding-bottom: 12px;
+            margin-bottom: 0;
+        }
+        .content-area .toc {
+            padding: 0.5in 0;
+        }
+        .content-area .toc h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 22px;
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin: 24px 0 16px 0;
+        }
+        .content-area .toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .content-area .toc li {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 16px;
+            line-height: 2.2;
+            border-bottom: 1px dotted #ccc;
+        }
+        .content-area .toc li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 2px 0;
+        }
+        .content-area .toc li a:hover {
+            color: #8B0000;
+        }
+        .content-area .toc li .toc-number {
+            color: #8B0000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+        .content-area .recipe {
+            padding: 0.25in 0;
+        }
+        .content-area .recipe-header {
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .content-area .recipe-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #8B0000;
+            margin: 0;
+        }
+        .content-area .recipe-meta {
+            display: flex;
+            gap: 32px;
+            margin: 12px 0;
+            font-size: 14px;
+            background: #f9f5f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+            flex-wrap: wrap;
+        }
+        .content-area .meta-item { display: flex; gap: 6px; }
+        .content-area .meta-label { font-weight: bold; }
+        .content-area h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 18px;
+            color: #8B0000;
+            margin: 20px 0 8px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+        .content-area .ingredients ul { list-style: disc; padding-left: 24px; margin: 0; }
+        .content-area .ingredients li { font-size: 14px; line-height: 1.7; }
+        .content-area .directions ol { padding-left: 24px; margin: 0; }
+        .content-area .directions li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+        .content-area .recipe-footer {
+            margin-top: 28px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .content-area .recipe-source { font-size: 11px; font-style: italic; color: #999; }
+        .content-area .cookbook-stamp {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 11px;
+            color: #8B0000;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .site-title { font-size: 28px; }
+            .tab-btn { font-size: 12px; padding: 8px 10px; }
+            .content-area { padding: 16px 16px 40px; }
+            .content-area .section-title { font-size: 26px; }
+            .content-area .recipe-meta { flex-direction: column; gap: 8px; }
+        }
+
+        /* Print — hide nav, show content */
+        @media print {
+            .site-header { display: none; }
+            .content-area { max-width: none; padding: 0; }
+            .recipe { page-break-after: always; }
+            .recipe:last-child { page-break-after: avoid; }
+        }
+    </style>
+</head>
+<body>
+
+<header class="site-header">
+    <h1 class="site-title">Natalie's Favorite Recipes</h1>
+    <p class="site-subtitle">A Family Cookbook</p>
+    <nav class="tab-bar" id="tabBar"></nav>
+</header>
+
+<main class="content-area" id="contentArea">
+    <div class="loading">Loading recipes&hellip;</div>
+</main>
+
+<script>
+    const sections = [
+        { label: 'Appetizers & Sides',       path: '01-recipes/appetizers-and-sides/appetizers-and-sides.html' },
+        { label: 'Soups & Salads',            path: '01-recipes/soups-and-salads/soups-and-salads.html' },
+        { label: 'Pasta',                     path: '01-recipes/pasta/pasta.html' },
+        { label: 'Main Courses (Beef)',       path: '01-recipes/main-courses/beef/beef.html' },
+        { label: 'Main Courses (Pork)',       path: '01-recipes/main-courses/pork/pork.html' },
+        { label: 'Main Courses (Poultry)',    path: '01-recipes/main-courses/poultry/poultry.html' },
+        { label: 'Main Courses (Seafood)',    path: '01-recipes/main-courses/seafood/seafood.html' },
+        { label: 'Main Courses (Other)',      path: '01-recipes/main-courses/other/other.html' },
+        { label: 'Sauces',                    path: '01-recipes/sauces/sauces.html' },
+        { label: 'Desserts',                  path: '01-recipes/desserts/desserts.html' },
+        { label: 'Holiday',                   path: '01-recipes/holiday/holiday.html' },
+        { label: 'Top Secret Family Recipes', path: '01-recipes/top-secret-family-recipes/top-secret-family-recipes.html' }
+    ];
+
+    const tabBar = document.getElementById('tabBar');
+    const contentArea = document.getElementById('contentArea');
+    const cache = {};
+    let activeIndex = -1;
+
+    // Build tab buttons
+    sections.forEach((section, i) => {
+        const btn = document.createElement('button');
+        btn.className = 'tab-btn';
+        btn.textContent = section.label;
+        btn.addEventListener('click', () => loadSection(i));
+        tabBar.appendChild(btn);
+    });
+
+    async function loadSection(index) {
+        if (index === activeIndex) return;
+        activeIndex = index;
+
+        // Update active tab
+        tabBar.querySelectorAll('.tab-btn').forEach((btn, i) => {
+            btn.classList.toggle('active', i === index);
+        });
+
+        // Show loading
+        contentArea.innerHTML = '<div class="loading">Loading recipes&hellip;</div>';
+
+        try {
+            let html = cache[index];
+            if (!html) {
+                const resp = await fetch(sections[index].path);
+                if (!resp.ok) throw new Error('Failed to load');
+                const text = await resp.text();
+                // Extract body content
+                const match = text.match(/<body[^>]*>([\s\S]*)<\/body>/i);
+                html = match ? match[1] : text;
+                cache[index] = html;
+            }
+            contentArea.innerHTML = html;
+            // Scroll to top of content
+            contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        } catch (e) {
+            contentArea.innerHTML = '<div class="error">Could not load this section. Try refreshing the page.</div>';
+        }
+    }
+
+    // Load first section on page load
+    loadSection(0);
+</script>
+
+</body>
+</html>

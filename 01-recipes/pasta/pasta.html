@@ -1,0 +1,801 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natalie's Favorite Recipes — Pasta</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            .recipe { page-break-after: always; }
+            .recipe:last-child { page-break-after: avoid; }
+            body { margin: 0; }
+        }
+        body {
+            font-family: 'Lato', Georgia, serif;
+            color: #333;
+            max-width: 7.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        .recipe { padding: 0.25in 0; }
+        .recipe-header {
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .recipe-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #8B0000;
+            margin: 0;
+        }
+        .recipe-meta {
+            display: flex;
+            gap: 32px;
+            margin: 12px 0;
+            font-size: 14px;
+            background: #f9f5f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        .meta-item { display: flex; gap: 6px; }
+        .meta-label { font-weight: bold; }
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 18px;
+            color: #8B0000;
+            margin: 20px 0 8px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+        .ingredients ul { list-style: disc; padding-left: 24px; margin: 0; }
+        .ingredients li { font-size: 14px; line-height: 1.7; }
+        .directions ol { padding-left: 24px; margin: 0; }
+        .directions li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+        .recipe-footer {
+            margin-top: 28px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .recipe-source { font-size: 11px; font-style: italic; color: #999; }
+        .cookbook-stamp {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 11px;
+            color: #8B0000;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        h1.section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 32px;
+            color: #8B0000;
+            border-bottom: 3px solid #8B0000;
+            padding-bottom: 12px;
+            margin-bottom: 0;
+        }
+    
+        /* Table of Contents styles */
+        .toc {
+            page-break-after: always;
+            padding: 0.5in 0;
+        }
+        .toc h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 22px;
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin: 24px 0 16px 0;
+        }
+        .toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc li {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 16px;
+            line-height: 2.2;
+            border-bottom: 1px dotted #ccc;
+        }
+        .toc li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 2px 0;
+        }
+        .toc li a:hover {
+            color: #8B0000;
+        }
+        .toc li .toc-number {
+            color: #8B0000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="section-title">Pasta</h1>
+
+<div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#homemade-macaroni-and-four-cheeses"><span class="toc-number">1.</span> Homemade Macaroni and Four Cheeses</a></li>
+        <li><a href="#yogurt-cheese-a-healthy-substitute-for-cream-cheese"><span class="toc-number">2.</span> Yogurt Cheese &mdash; A Healthy Substitute for Cream Cheese</a></li>
+        <li><a href="#five-easy-ravioli-sauces"><span class="toc-number">3.</span> Five Easy Ravioli Sauces</a></li>
+        <li><a href="#ravioli-and-asparagus-in-goat-cheese-sauce"><span class="toc-number">4.</span> Ravioli and Asparagus in Goat Cheese Sauce</a></li>
+        <li><a href="#pasta-with-tomatoes-and-eggplant"><span class="toc-number">5.</span> Pasta with Tomatoes and Eggplant</a></li>
+        <li><a href="#light-cheese-ravioli-with-roasted-vegetables"><span class="toc-number">6.</span> Light Cheese Ravioli with Roasted Vegetables</a></li>
+        <li><a href="#linguine-with-hot-garlic-shrimp-and-sugar-snap-peas"><span class="toc-number">7.</span> Linguine with Hot Garlic Shrimp and Sugar Snap Peas</a></li>
+        <li><a href="#mushroom-tortelloni-with-chicken-and-red-bell-pepper-sauce"><span class="toc-number">8.</span> Mushroom Tortelloni with Chicken and Red Bell Pepper Sauce</a></li>
+        <li><a href="#seafood-pasta-with-lemon-saffron-herb-dressing"><span class="toc-number">9.</span> Seafood Pasta with Lemon-Saffron Herb Dressing</a></li>
+        <li><a href="#pasta-with-ricotta-lemon-and-spinach"><span class="toc-number">10.</span> Pasta with Ricotta, Lemon and Spinach</a></li>
+        <li><a href="#penne-with-gorgonzola-cream-sauce"><span class="toc-number">11.</span> Penne with Gorgonzola Cream Sauce</a></li>
+        <li><a href="#pasta-ricotta-pie"><span class="toc-number">12.</span> Pasta Ricotta Pie</a></li>
+        <li><a href="#spaghetti-alla-carbonara"><span class="toc-number">13.</span> Spaghetti alla Carbonara</a></li>
+        <li><a href="#butternut-squash-lasagna"><span class="toc-number">14.</span> Butternut Squash Lasagna</a></li>
+    </ol>
+</div>
+
+<!-- Recipe 1: Homemade Macaroni and Four Cheeses -->
+<div class="recipe" id="homemade-macaroni-and-four-cheeses">
+    <div class="recipe-header">
+        <p class="recipe-title">Homemade Macaroni and Four Cheeses</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Cook:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 pound penne pasta or other tube macaroni</li>
+            <li>2 tablespoons butter</li>
+            <li>2 ounces chopped pancetta</li>
+            <li>1 cup chopped onions</li>
+            <li>Gray salt</li>
+            <li>2 tablespoons all-purpose flour</li>
+            <li>1 cup whipping cream</li>
+            <li>4 ounces grated Asiago cheese</li>
+            <li>4 ounces Cheddar cheese</li>
+            <li>3 ounces grated Parmesan cheese, divided</li>
+            <li>4 ounces Cambozola cheese, in pieces</li>
+            <li>1 cup bread crumbs</li>
+            <li>3 tablespoons toasted pine nuts</li>
+            <li>Fresh nutmeg</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 350&deg;F. Cook pasta until al dente, about 8 minutes, and set aside after draining well.</li>
+            <li>Warm a saut&eacute; pan. Melt butter and saut&eacute; chopped pancetta for extra richness.</li>
+            <li>Add onions and sweat for 4&ndash;5 minutes, seasoning with salt. Sprinkle flour over onions to soak up butter &mdash; this will create a stable sauce.</li>
+            <li>Add whipping cream and warm sauce for 1 minute. Lower the heat and add Asiago, Cheddar, and half of the Parmesan cheese. Stir gently and add Cambozola pieces.</li>
+            <li>Toss cooked, well-drained macaroni in cheese sauce and place in a buttered casserole dish.</li>
+            <li>Mix remaining Parmesan with bread crumbs and sprinkle on top. Cover top with freshly ground pepper, toasted pine nuts, and fresh grated nutmeg.</li>
+            <li>Bake until golden brown and crispy on top, about 30 minutes.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">NapaStyle, Episode FLNST-216</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 2: Yogurt Cheese -->
+<div class="recipe" id="yogurt-cheese-a-healthy-substitute-for-cream-cheese">
+    <div class="recipe-header">
+        <p class="recipe-title">Yogurt Cheese &mdash; A Healthy Substitute for Cream Cheese</p>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>Plain yogurt (make sure it does not contain gelatin)</li>
+            <li>Yogurt cheese funnel or paper-lined coffee filter</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Place funnel or paper-lined coffee filter over a large measuring cup. Spoon in plain yogurt.</li>
+            <li>Cover and refrigerate. Let drain for about 14 hours to get a thick, creamy consistency.</li>
+            <li>Use yogurt cheese as a base for dips or in place of sour cream. For a sweet spread, flavor with maple syrup; for a savory version, add salt, pepper, and fresh herbs.</li>
+        </ol>
+        <p style="font-size: 13px; font-style: italic; margin-top: 12px; color: #555;"><strong>Tip:</strong> Rich-tasting yogurt cheese is yogurt from which the whey has been drained, leaving it soft and spreadable. It&rsquo;s low in fat &mdash; fat-free if you start with fat-free yogurt.</p>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 3: Five Easy Ravioli Sauces -->
+<div class="recipe" id="five-easy-ravioli-sauces">
+    <div class="recipe-header">
+        <p class="recipe-title">Five Easy Ravioli Sauces</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 each</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Cherry-Tomato Sauce</h2>
+        <ul>
+            <li>1 tablespoon olive oil</li>
+            <li>3 garlic cloves, minced</li>
+            <li>1 pint cherry tomatoes, halved</li>
+            <li>2 teaspoons flour</li>
+            <li>1/2 cup chicken broth</li>
+            <li>2 tablespoons chopped parsley</li>
+            <li>Cheese ravioli</li>
+        </ul>
+        <h2>Mushroom Sauce</h2>
+        <ul>
+            <li>1 tablespoon oil</li>
+            <li>2 cups sliced, stemmed shiitake mushrooms</li>
+            <li>2 garlic cloves, minced</li>
+            <li>1/2 cup chopped scallions</li>
+            <li>2 teaspoons flour</li>
+            <li>1 cup chicken broth</li>
+            <li>1 tablespoon tomato paste</li>
+            <li>1/2 teaspoon pepper</li>
+            <li>Chicken and rosemary ravioli</li>
+        </ul>
+        <h2>Oriental Vegetable Sauce</h2>
+        <ul>
+            <li>1 tablespoon Oriental sesame oil</li>
+            <li>1 1/2 cups halved snow peas</li>
+            <li>1 medium red pepper, diced</li>
+            <li>1/2 cup chopped scallions</li>
+            <li>1 tablespoon each minced ginger and garlic</li>
+            <li>2 teaspoons flour</li>
+            <li>1 cup beef broth</li>
+            <li>Beef and garlic ravioli</li>
+        </ul>
+        <h2>Apple-Arugula Sauce</h2>
+        <ul>
+            <li>1 tablespoon butter</li>
+            <li>2 Granny Smith apples, peeled and diced</li>
+            <li>1 tablespoon minced shallot</li>
+            <li>2 teaspoons flour</li>
+            <li>1 cup chicken broth</li>
+            <li>1/2 teaspoon each salt and pepper</li>
+            <li>1 bunch arugula, coarsely chopped</li>
+            <li>Gorgonzola-walnut ravioli</li>
+        </ul>
+        <h2>Pea Sauce</h2>
+        <ul>
+            <li>1 tablespoon olive oil</li>
+            <li>1/2 cup chopped scallions</li>
+            <li>3 garlic cloves, minced</li>
+            <li>1 tablespoon flour</li>
+            <li>1 cup chicken broth</li>
+            <li>2 tablespoons cream</li>
+            <li>1 cup thawed frozen peas</li>
+            <li>2 tablespoons minced fresh dill</li>
+            <li>1/2 teaspoon pepper</li>
+            <li>Cheese ravioli</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li><strong>Cherry-Tomato:</strong> Heat oil; cook garlic 1 minute. Add tomatoes; cook until soft. Stir in flour, broth, and parsley. Cook over low heat until thick. Toss with cheese ravioli.</li>
+            <li><strong>Mushroom:</strong> In oil, saut&eacute; mushrooms, garlic, and scallions until soft. Stir in flour, broth, tomato paste, and pepper; cook over low heat until thick. Toss with chicken and rosemary ravioli.</li>
+            <li><strong>Oriental Vegetable:</strong> In sesame oil, saut&eacute; snow peas, red pepper, scallions, ginger, and garlic until soft. Stir in flour and beef broth; cook until thick. Toss with beef and garlic ravioli.</li>
+            <li><strong>Apple-Arugula:</strong> In butter, saut&eacute; apples and shallot until soft. Stir in flour, broth, salt, and pepper; cook until thick. Add arugula. Toss with Gorgonzola-walnut ravioli.</li>
+            <li><strong>Pea:</strong> In oil, saut&eacute; scallions and garlic until soft. Stir in flour, broth, cream, peas, dill, and pepper. Cook until thick. Toss with cheese ravioli.</li>
+        </ol>
+        <p style="font-size: 13px; font-style: italic; margin-top: 12px; color: #555;"><strong>Note:</strong> Each sauce uses a 9-ounce package of fresh ravioli (found in the supermarket&rsquo;s refrigerated section). All have around 300 calories and 13 grams of fat per serving.</p>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 4: Ravioli and Asparagus in Goat Cheese Sauce -->
+<div class="recipe" id="ravioli-and-asparagus-in-goat-cheese-sauce">
+    <div class="recipe-header">
+        <p class="recipe-title">Ravioli and Asparagus in Goat Cheese Sauce</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>2 tablespoons butter or margarine</li>
+            <li>2 tablespoons all-purpose flour</li>
+            <li>1 cup chicken broth</li>
+            <li>1 (3.5-ounce) package Montrachet goat cheese</li>
+            <li>1/2 teaspoon grated lemon peel</li>
+            <li>1 bunch asparagus, cut into 2-inch lengths</li>
+            <li>1 (9-ounce) package chicken and rosemary ravioli</li>
+            <li>Minced sun-dried tomatoes, for garnish</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Make the sauce: In a medium saucepan, melt butter over medium heat. Add flour and cook, stirring, 1 minute.</li>
+            <li>Slowly whisk in the chicken broth and cook until the sauce lightly thickens, about 3 minutes. Remove from heat and drop in the goat cheese and lemon peel, stirring until the cheese melts. Set sauce aside and keep warm.</li>
+            <li>Heat a large pot of water to boiling and salt it lightly. Drop asparagus into boiling water and cook 5 minutes until fork-tender. Remove with slotted spoon and set aside.</li>
+            <li>Add ravioli to boiling water and cook according to label directions. Drain.</li>
+            <li>Combine ravioli with asparagus and toss with sauce. Garnish with minced sun-dried tomatoes.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 5: Pasta with Tomatoes and Eggplant -->
+<div class="recipe" id="pasta-with-tomatoes-and-eggplant">
+    <div class="recipe-header">
+        <p class="recipe-title">Pasta with Tomatoes and Eggplant</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>2 tablespoons vegetable oil</li>
+            <li>1 large clove garlic, minced</li>
+            <li>2 cans (28 ounces each) Italian-style peeled tomatoes, well drained</li>
+            <li>1 tablespoon dry white wine such as Sauvignon Blanc</li>
+            <li>1 tablespoon sherry wine vinegar or red wine vinegar</li>
+            <li>1 tablespoon sun-dried tomato paste (available in jars or tubes), optional but highly recommended</li>
+            <li>Salt to taste</li>
+            <li>1 pound tender young eggplant, preferably Japanese eggplant, stems removed</li>
+            <li>1 pound penne or mostaccioli pasta</li>
+            <li>4 ounces feta cheese, drained and crumbled</li>
+            <li>Freshly ground black pepper to taste</li>
+            <li>4&ndash;6 fresh basil leaves</li>
+            <li>2 tablespoons olive oil</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>To make tomato sauce: Heat vegetable oil in a large skillet over medium heat. Add garlic and cook for about 1 minute or just until it releases its fragrance; do not overcook or garlic will be bitter.</li>
+            <li>Add tomatoes, increase heat, and simmer uncovered for 30 minutes, stirring occasionally and breaking up tomatoes as you stir.</li>
+            <li>Add wine and vinegar and cook for 10 minutes. (This is a concentrated sauce &mdash; cook mixture until most juices in skillet have evaporated.) Add sun-dried tomato paste and stir to combine. Season with salt.</li>
+            <li>Meanwhile, cook eggplant and pasta. Toss pasta with tomato sauce, crumbled feta cheese, black pepper, fresh basil leaves, and olive oil.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Compliments of Ray Simon, Chinook Winery</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 6: Light Cheese Ravioli with Roasted Vegetables -->
+<div class="recipe" id="light-cheese-ravioli-with-roasted-vegetables">
+    <div class="recipe-header">
+        <p class="recipe-title">Light Cheese Ravioli with Roasted Vegetables</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 25 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>3/4 pound baby carrots</li>
+            <li>1/2 pound fresh shiitake mushrooms, stems removed and thickly sliced</li>
+            <li>1 1/2 cups fresh or frozen corn kernels</li>
+            <li>4 cloves garlic, sliced</li>
+            <li>2 tablespoons olive oil</li>
+            <li>1 (7-ounce) container Contadina refrigerated pesto with basil</li>
+            <li>1 tablespoon lemon juice</li>
+            <li>1/2 teaspoon freshly ground pepper</li>
+            <li>1 (9-ounce) package Contadina refrigerated light cheese ravioli, cooked, drained, and kept warm</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Toss vegetables and olive oil in a jelly-roll pan or large baking sheet with sides; spread in an even layer.</li>
+            <li>Bake at 425&deg;F for 18 to 20 minutes or until tender and lightly browned, stirring occasionally.</li>
+            <li>Combine pesto, lemon juice, and pepper; toss with ravioli and roasted vegetables.</li>
+            <li>Serve warm or at room temperature.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Contadina recipe</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 7: Linguine with Hot Garlic Shrimp and Sugar Snap Peas -->
+<div class="recipe" id="linguine-with-hot-garlic-shrimp-and-sugar-snap-peas">
+    <div class="recipe-header">
+        <p class="recipe-title">Linguine with Hot Garlic Shrimp and Sugar Snap Peas</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 25 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 pound large shrimp, peeled and deveined</li>
+            <li>2 teaspoons lemon juice</li>
+            <li>4 cloves garlic, crushed</li>
+            <li>1/2 teaspoon crushed red pepper</li>
+            <li>1 1/2 cups small sugar snap peas, ends trimmed (about 1/3 pound), or 1 pound fresh asparagus, trimmed and cut into 2-inch pieces</li>
+            <li>3 tablespoons olive oil, divided</li>
+            <li>1 (9-ounce) package Contadina refrigerated tomato &amp; herb linguine, cooked, drained, and kept warm</li>
+            <li>1 (10-ounce) container Contadina refrigerated light Alfredo sauce</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Toss shrimp, lemon juice, garlic, and red pepper in a small bowl; cover and let stand 15 minutes.</li>
+            <li>Saut&eacute; peas in 2 tablespoons olive oil in a large heavy skillet over medium-high heat until just tender; transfer to a serving bowl and keep warm.</li>
+            <li>Heat remaining 1 tablespoon olive oil in skillet; add shrimp mixture. Saut&eacute; 4 minutes or until shrimp turn opaque.</li>
+            <li>Stir in Alfredo sauce; cook 1 minute or until hot, stirring constantly.</li>
+            <li>Toss with linguine and peas. Serve immediately.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Contadina recipe</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 8: Mushroom Tortelloni with Chicken and Red Bell Pepper Sauce -->
+<div class="recipe" id="mushroom-tortelloni-with-chicken-and-red-bell-pepper-sauce">
+    <div class="recipe-header">
+        <p class="recipe-title">Mushroom Tortelloni with Chicken and Red Bell Pepper Sauce</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 25 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1/2 ounce dried wild mushrooms</li>
+            <li>1/2 cup dry sherry or vermouth</li>
+            <li>1 (10-ounce) container Contadina refrigerated red bell pepper cream sauce</li>
+            <li>2 tablespoons olive oil, divided</li>
+            <li>1 sweet red pepper, cut into 2 1/4-inch julienne strips</li>
+            <li>3/4 pound skinned and boned chicken breast halves, cubed</li>
+            <li>1 (9-ounce) package Contadina refrigerated mushroom tortelloni, cooked, drained, and kept warm</li>
+            <li>1/4 cup pine nuts, toasted</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Simmer mushrooms and sherry 3 minutes in a small saucepan; remove from heat and let stand, covered, 15 minutes. Drain and chop mushrooms, reserving liquid.</li>
+            <li>Pour liquid through a strainer lined with a dampened paper towel into a bowl; stir in red bell pepper cream sauce.</li>
+            <li>Saut&eacute; pepper strips and mushrooms in 1 tablespoon olive oil in a large skillet until peppers are just tender; transfer to a serving bowl and keep warm.</li>
+            <li>Heat remaining olive oil in skillet; add chicken and saut&eacute; until golden brown over medium-high heat.</li>
+            <li>Reduce heat to medium and stir in red bell pepper cream sauce mixture. Cook, stirring constantly, until hot.</li>
+            <li>Toss with tortelloni and pepper mixture in serving bowl; sprinkle with toasted pine nuts.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Contadina recipe</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 9: Seafood Pasta with Lemon-Saffron Herb Dressing -->
+<div class="recipe" id="seafood-pasta-with-lemon-saffron-herb-dressing">
+    <div class="recipe-header">
+        <p class="recipe-title">Seafood Pasta with Lemon-Saffron Herb Dressing</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6 to 8</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>12 ounces campanelle (trumpet-shaped pasta) or macaroni</li>
+            <li>1/8 teaspoon crushed saffron threads</li>
+            <li>7 tablespoons fresh lemon juice, divided</li>
+            <li>6 tablespoons extra-virgin olive oil, divided</li>
+            <li>1/2 cup mayonnaise</li>
+            <li>1/2 cup sour cream</li>
+            <li>1/4 cup thinly sliced green onions</li>
+            <li>2 tablespoons drained capers</li>
+            <li>2 tablespoons minced fresh tarragon, plus sprigs for garnish</li>
+            <li>1 tablespoon minced fresh dill, plus sprigs for garnish</li>
+            <li>1 teaspoon sugar</li>
+            <li>1 pound cooked medium shrimp</li>
+            <li>1 cup finely chopped celery</li>
+            <li>1/2 pound Dungeness crabmeat</li>
+            <li>2 large handfuls of arugula</li>
+            <li>2 small heads of butter lettuce</li>
+            <li>Lemon wedges</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Cook pasta in large pot of boiling salted water until tender but still firm to bite, stirring occasionally. Drain, reserving 1/2 cup cooking liquid.</li>
+            <li>Place 3 tablespoons hot cooking liquid in a medium bowl. Sprinkle saffron over and let stand at room temperature 5 minutes.</li>
+            <li>Transfer pasta to a large bowl. Drizzle with 1 tablespoon lemon juice and 1 tablespoon oil; toss to coat. Let stand at room temperature until cool, stirring occasionally.</li>
+            <li>Whisk remaining lemon juice, remaining oil, mayonnaise, sour cream, green onions, capers, tarragon, dill, and sugar into the saffron mixture.</li>
+            <li>Add shrimp, celery, and crabmeat to the pasta. Pour dressing over and toss to combine.</li>
+            <li>Serve over arugula and butter lettuce leaves, garnished with lemon wedges and herb sprigs.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 10: Pasta with Ricotta, Lemon and Spinach -->
+<div class="recipe" id="pasta-with-ricotta-lemon-and-spinach">
+    <div class="recipe-header">
+        <p class="recipe-title">Pasta with Ricotta, Lemon and Spinach</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 12 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>16 ounces rigatoni, bowties, or other pasta</li>
+            <li>2 tablespoons olive oil</li>
+            <li>Juice from 2 lemons (about 1/2 cup)</li>
+            <li>1/4 cup finely grated Parmesan</li>
+            <li>1/2 cup chopped basil leaves, or 1 tablespoon dried</li>
+            <li>Salt and pepper to taste</li>
+            <li>1 (6-ounce) bag or 6 cups fresh baby spinach leaves</li>
+            <li>8 ounces (1 cup) ricotta</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Cook pasta in a large pot of boiling, salted water according to package directions. Drain and return to pot.</li>
+            <li>Combine oil, lemon juice, Parmesan, basil, salt, and pepper in a bowl. Add to hot pasta along with spinach leaves and toss well to coat.</li>
+            <li>Divide among 4 bowls and top each with a dollop of ricotta. Pass extra Parmesan, if desired.</li>
+        </ol>
+        <p style="font-size: 13px; font-style: italic; margin-top: 12px; color: #555;"><strong>Tip:</strong> If your kids are spinach-shy, substitute 2 cups cut cherry tomatoes or 1 cup cooked baby peas.</p>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 11: Penne with Gorgonzola Cream Sauce -->
+<div class="recipe" id="penne-with-gorgonzola-cream-sauce">
+    <div class="recipe-header">
+        <p class="recipe-title">Penne with Gorgonzola Cream Sauce</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1/4 cup unsalted butter</li>
+            <li>3/4 cup heavy cream</li>
+            <li>1/4 pound Gorgonzola Dolce cheese</li>
+            <li>Salt and freshly ground pepper</li>
+            <li>1 pound penne</li>
+            <li>1/2 cup toasted chopped walnuts</li>
+            <li>Freshly ground nutmeg, to taste</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>In a saucepan over low heat, melt butter. Add cream and Gorgonzola, and cook until the Gorgonzola melts completely, stirring continuously. Season with salt and pepper.</li>
+            <li>In a large pot of boiling water, cook penne until it is tender to the bite. Drain.</li>
+            <li>Toss with Gorgonzola cream sauce. Serve garnished with toasted walnuts and nutmeg.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 12: Pasta Ricotta Pie -->
+<div class="recipe" id="pasta-ricotta-pie">
+    <div class="recipe-header">
+        <p class="recipe-title">Pasta Ricotta Pie</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 50&ndash;60 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 8</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1/4 pound vermicelli</li>
+            <li>1/2 cup onion, finely chopped</li>
+            <li>1 clove garlic, finely chopped</li>
+            <li>1 tablespoon olive oil</li>
+            <li>1 cup grated fresh Romano cheese, divided</li>
+            <li>3 eggs</li>
+            <li>1 (16-ounce) container part-skim ricotta cheese</li>
+            <li>1 (10-ounce) package frozen chopped spinach, thawed and drained</li>
+            <li>1 1/2 teaspoons salt</li>
+            <li>1 (26-ounce) jar spaghetti sauce</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 350&deg;F. Break vermicelli into thirds and cook according to package directions. Drain and set aside.</li>
+            <li>Saut&eacute; onion and garlic in oil until tender. Add pasta, 1/2 cup Romano cheese, and 1 egg; mix well. Press into a greased 9-inch springform pan.</li>
+            <li>Separate yolks and whites of remaining 2 eggs. Combine yolks, ricotta cheese, spinach, salt, and remaining 1/2 cup Romano cheese. Spread over pasta layer.</li>
+            <li>In a small mixing bowl, beat egg whites until stiff but not dry; fold in 1 1/2 cups spaghetti sauce. Pour over spinach layer.</li>
+            <li>Bake 50 to 60 minutes, until set. Let stand 10 minutes, then remove sides of pan and cut into wedges.</li>
+            <li>Heat remaining sauce and serve with pie.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Grand Prize recipe &mdash; Ellen Larson, Rochester, MN</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 13: Spaghetti alla Carbonara -->
+<div class="recipe" id="spaghetti-alla-carbonara">
+    <div class="recipe-header">
+        <p class="recipe-title">Spaghetti alla Carbonara</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>2 tablespoons butter</li>
+            <li>3 tablespoons olive oil, divided</li>
+            <li>1/3 pound Italian pancetta, cut into thin strips</li>
+            <li>3 slices Canadian bacon, roughly chopped</li>
+            <li>1 cup white wine</li>
+            <li>1 tablespoon salt</li>
+            <li>1 pound dried spaghetti</li>
+            <li>4 egg yolks</li>
+            <li>1/4 cup Parmigiano-Reggiano, freshly grated, divided</li>
+            <li>1/2 teaspoon pepper</li>
+            <li>2 tablespoons Italian parsley, finely chopped</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Heat butter and 2 tablespoons olive oil in a skillet over medium heat. When butter melts, add pancetta and Canadian bacon. Cook until pancetta is browned but not crisp.</li>
+            <li>Add white wine. Cook until wine reduces by half. Set aside.</li>
+            <li>Cook spaghetti with remaining 1 tablespoon olive oil in plenty of salted boiling water until al dente.</li>
+            <li>Meanwhile, beat egg yolks with 2 tablespoons Parmigiano-Reggiano, salt, and pepper in a large bowl.</li>
+            <li>Drain spaghetti when cooked and immediately pour over egg-cheese mixture. Add pancetta&ndash;Canadian bacon mixture. Toss, making sure to coat spaghetti evenly.</li>
+            <li>Add remaining 2 tablespoons Parmigiano-Reggiano and Italian parsley. Toss again and serve.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Adapted from Giuliano Hazan&rsquo;s &ldquo;The Classic Pasta Cookbook&rdquo; (Dorling Kindersley)</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 14: Butternut Squash Lasagna -->
+<div class="recipe" id="butternut-squash-lasagna">
+    <div class="recipe-header">
+        <p class="recipe-title">Butternut Squash Lasagna</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 1 hr 25 min</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Medium</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 8 to 10</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 tablespoon olive oil</li>
+            <li>1 (1 1/2 to 2-pound) butternut squash, peeled, seeded, and cut into 1-inch cubes</li>
+            <li>Salt and freshly ground black pepper</li>
+            <li>1/2 cup water</li>
+            <li>3 amaretti cookies, crumbled</li>
+            <li>1/4 cup butter</li>
+            <li>1/4 cup all-purpose flour</li>
+            <li>3 1/2 cups whole milk</li>
+            <li>Pinch nutmeg</li>
+            <li>3/4 cup (lightly packed) fresh basil leaves</li>
+            <li>12 no-boil lasagna noodles</li>
+            <li>2 1/2 cups shredded whole-milk mozzarella cheese</li>
+            <li>1/3 cup grated Parmesan</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Heat olive oil in a large skillet over medium heat. Add squash, season with salt and pepper, and cook for 5 minutes. Add water, cover, and cook until squash is tender, about 15 minutes. Mash with a fork and stir in crumbled amaretti cookies.</li>
+            <li>Make b&eacute;chamel: Melt butter in a saucepan over medium heat. Whisk in flour and cook 1 minute. Gradually whisk in milk and cook until sauce thickens. Season with nutmeg, salt, and pepper.</li>
+            <li>Preheat oven to 375&deg;F. Spread a thin layer of b&eacute;chamel in a baking dish. Layer noodles, squash mixture, basil leaves, mozzarella, and b&eacute;chamel. Repeat layers.</li>
+            <li>Top final layer with remaining b&eacute;chamel, mozzarella, and Parmesan.</li>
+            <li>Cover with foil and bake 30 minutes. Uncover and bake until golden and bubbling, about 15 minutes more. Let rest 15 minutes before serving.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Giada De Laurentiis &mdash; Everyday Italian, Food Network</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+</body>
+</html>

@@ -1,0 +1,666 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natalie's Favorite Recipes — Appetizers &amp; Sides</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @media print {
+            .recipe { page-break-after: always; }
+            .recipe:last-child { page-break-after: avoid; }
+            body { margin: 0; }
+        }
+        body {
+            font-family: 'Lato', Georgia, serif;
+            color: #333;
+            max-width: 7.5in;
+            margin: 0 auto;
+            padding: 0.5in;
+        }
+        .recipe { padding: 0.25in 0; }
+        .recipe-header {
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin-bottom: 16px;
+        }
+        .recipe-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 24px;
+            font-weight: bold;
+            color: #8B0000;
+            margin: 0;
+        }
+        .recipe-meta {
+            display: flex;
+            gap: 32px;
+            margin: 12px 0;
+            font-size: 14px;
+            background: #f9f5f0;
+            padding: 8px 12px;
+            border-radius: 4px;
+        }
+        .meta-item { display: flex; gap: 6px; }
+        .meta-label { font-weight: bold; }
+        h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 18px;
+            color: #8B0000;
+            margin: 20px 0 8px 0;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 4px;
+        }
+        .ingredients ul { list-style: disc; padding-left: 24px; margin: 0; }
+        .ingredients li { font-size: 14px; line-height: 1.7; }
+        .directions ol { padding-left: 24px; margin: 0; }
+        .directions li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+        .recipe-footer {
+            margin-top: 28px;
+            padding-top: 10px;
+            border-top: 1px solid #ddd;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .recipe-source { font-size: 11px; font-style: italic; color: #999; }
+        .cookbook-stamp {
+            font-family: 'Playfair Display', Georgia, serif;
+            font-size: 11px;
+            color: #8B0000;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+        h1.section-title {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 32px;
+            color: #8B0000;
+            border-bottom: 3px solid #8B0000;
+            padding-bottom: 12px;
+            margin-bottom: 0;
+        }
+    
+        /* Table of Contents styles */
+        .toc {
+            page-break-after: always;
+            padding: 0.5in 0;
+        }
+        .toc h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 22px;
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin: 24px 0 16px 0;
+        }
+        .toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc li {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 16px;
+            line-height: 2.2;
+            border-bottom: 1px dotted #ccc;
+        }
+        .toc li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 2px 0;
+        }
+        .toc li a:hover {
+            color: #8B0000;
+        }
+        .toc li .toc-number {
+            color: #8B0000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="section-title">Appetizers &amp; Sides</h1>
+
+<div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#tomato-and-goat-cheese-tarts"><span class="toc-number">1.</span> Tomato and Goat Cheese Tarts</a></li>
+        <li><a href="#frittata-primavera"><span class="toc-number">2.</span> Frittata Primavera</a></li>
+        <li><a href="#spinach-pie"><span class="toc-number">3.</span> Spinach Pie</a></li>
+        <li><a href="#spinach-and-cheese-quiche"><span class="toc-number">4.</span> Spinach and Cheese Quiche</a></li>
+        <li><a href="#bacon-home-fries"><span class="toc-number">5.</span> Bacon Home Fries</a></li>
+        <li><a href="#potatoes-savoyarde"><span class="toc-number">6.</span> Potatoes Savoyarde</a></li>
+        <li><a href="#onion-and-bacon-tart"><span class="toc-number">7.</span> Onion and Bacon Tart</a></li>
+        <li><a href="#maple-glazed-autumn-carrots-with-garlic-cloves"><span class="toc-number">8.</span> Maple-Glazed Autumn Carrots with Garlic Cloves</a></li>
+        <li><a href="#green-beans-with-toasted-almond-gremolata"><span class="toc-number">9.</span> Green Beans with Toasted Almond Gremolata</a></li>
+        <li><a href="#lemon-roasted-fingerling-potatoes"><span class="toc-number">10.</span> Lemon Roasted Fingerling Potatoes</a></li>
+        <li><a href="#pan-grilled-flatbread-with-mushrooms-and-autumn-vegetables"><span class="toc-number">11.</span> Pan-Grilled Flatbread with Mushrooms and Autumn Vegetables</a></li>
+        <li><a href="#cheese-crackers"><span class="toc-number">12.</span> Cheese Crackers</a></li>
+    </ol>
+</div>
+
+<!-- Recipe 1: Tomato and Goat Cheese Tarts -->
+<div class="recipe" id="tomato-and-goat-cheese-tarts">
+    <div class="recipe-header">
+        <p class="recipe-title">Tomato and Goat Cheese Tarts</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 25 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 individual tarts</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 package (17.3 ounces / 2 sheets) puff pastry, defrosted</li>
+            <li>Good olive oil</li>
+            <li>4 cups thinly sliced yellow onions (2 large onions)</li>
+            <li>3 large garlic cloves, cut into thin slivers</li>
+            <li>Kosher salt and freshly ground black pepper</li>
+            <li>3 tablespoons dry white wine</li>
+            <li>2 teaspoons minced fresh thyme leaves</li>
+            <li>4 tablespoons freshly grated Parmesan, plus 2 ounces shaved with a vegetable peeler</li>
+            <li>4 ounces garlic-and-herb goat cheese (recommended: Montrachet)</li>
+            <li>1 large tomato, cut into 4 (1/4-inch-thick) slices</li>
+            <li>3 tablespoons julienned basil leaves</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Unfold a sheet of puff pastry on a lightly floured surface and roll it lightly to an 11 by 11-inch square. Using a 6-inch wide saucer as a guide, cut 2 circles from the sheet, discarding the scraps. Repeat with the second sheet to make 4 circles in all. Place on 2 sheet pans lined with parchment paper and refrigerate until ready to use.</li>
+            <li>Preheat the oven to 425&deg;F.</li>
+            <li>Heat 3 tablespoons olive oil in a large skillet over medium-low heat and add the onions and garlic. Saut&eacute; for 15 to 20 minutes, stirring frequently, until the onions are limp and there is almost no moisture remaining. Add 1/2 teaspoon salt, 1/4 teaspoon pepper, the wine, and thyme and continue to cook for another 10 minutes, until the onions are lightly browned. Remove from heat.</li>
+            <li>Using a sharp paring knife, score a 1/4-inch-wide border around each pastry circle. Prick the pastry inside the score lines with the tines of a fork and sprinkle a tablespoon of grated Parmesan on each round, staying inside the scored border.</li>
+            <li>Place 1/4 of the onion mixture on each circle, staying within the scored edge. Crumble 1 ounce of goat cheese on top of the onions. Place a slice of tomato in the center of each tart. Brush the tomato lightly with olive oil and sprinkle with basil, salt, and pepper. Scatter 4 or 5 shards of Parmesan on each tart.</li>
+            <li>Bake for 20 to 25 minutes, until the pastry is golden brown. The bottom sheet pan may need an extra few minutes in the oven. Serve hot or warm.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Barefoot Contessa Back to Basics, 2008</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 2: Frittata Primavera -->
+<div class="recipe" id="frittata-primavera">
+    <div class="recipe-header">
+        <p class="recipe-title">Frittata Primavera</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 2</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>3 teaspoons olive oil</li>
+            <li>1/4 cup chopped onion</li>
+            <li>1 clove garlic, finely chopped</li>
+            <li>1/2 cup fresh asparagus pieces</li>
+            <li>1/2 cup canned or frozen artichoke hearts, chopped</li>
+            <li>1/2 cup sugar snap peas, strings pulled and cut in 1/2-inch pieces</li>
+            <li>1/4 teaspoon dried basil</li>
+            <li>1/8 teaspoon pepper</li>
+            <li>3/4 cup egg substitute or 3 eggs</li>
+            <li>1 tablespoon plain low-fat yogurt</li>
+            <li>1 tablespoon grated Parmesan cheese</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Heat 1 teaspoon of the oil in a skillet and cook the onion 2 or 3 minutes or until soft. Add the garlic and cook 1 minute more.</li>
+            <li>Stir in the asparagus, artichoke hearts, peas, basil, and pepper and cook, stirring occasionally, until tender but still slightly crisp, 3 to 5 minutes. Set aside.</li>
+            <li>Preheat the broiler. Beat the egg substitute (or eggs) with the yogurt and another pinch of pepper.</li>
+            <li>Heat the remaining oil in a heavy-bottomed skillet. Pour in the egg mixture and cook until just set on the bottom but still wet on the top, about 1 minute.</li>
+            <li>Scatter the vegetables over the top and set under the broiler to finish cooking, about 2 minutes. Dust the top with Parmesan cheese, cut into wedges, and serve.</li>
+        </ol>
+        <p style="font-size: 13px; font-style: italic; margin-top: 12px; color: #555;"><strong>Note:</strong> Provides 1 1/2 vegetable servings per person.</p>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 3: Spinach Pie -->
+<div class="recipe" id="spinach-pie">
+    <div class="recipe-header">
+        <p class="recipe-title">Spinach Pie</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 20 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 60 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 8</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>16 ounces frozen cut leaf spinach, thawed</li>
+            <li>5 eggs</li>
+            <li>2 pounds fresh ricotta</li>
+            <li>1 tablespoon chopped fresh dill, or 1 teaspoon dried (optional)</li>
+            <li>Salt and pepper to taste</li>
+            <li>4 ounces (1/4 cup) cherry or grape tomatoes, halved</li>
+            <li>4 ounces feta, roughly crumbled</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 325&deg;F. Squeeze out all liquid from thawed spinach and set aside.</li>
+            <li>Beat eggs well in a large bowl, then thoroughly blend in spinach, ricotta, and dill (if using). Season with salt and pepper and spread into a lightly greased 3-quart casserole.</li>
+            <li>Place tomatoes, cut side up, on spinach mixture, then sprinkle crumbled feta over top.</li>
+            <li>Bake about 1 hour, until pie is set and lightly golden. Serve warm, cold, or at room temperature.</li>
+        </ol>
+        <p style="font-size: 13px; font-style: italic; margin-top: 12px; color: #555;"><strong>Tip:</strong> Thaw the spinach the night before, and then whip up this Greek-inspired family treat &mdash; no crust needed! The leftovers are great to take to work.</p>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 4: Spinach and Cheese Quiche -->
+<div class="recipe" id="spinach-and-cheese-quiche">
+    <div class="recipe-header">
+        <p class="recipe-title">Spinach and Cheese Quiche</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 30 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 packaged rolled pie pastry, such as Pillsbury</li>
+            <li>1 (10-ounce) box frozen leaf spinach</li>
+            <li>4 large eggs</li>
+            <li>1 3/4 cups half-and-half</li>
+            <li>1/2 teaspoon salt</li>
+            <li>1/4 teaspoon pepper</li>
+            <li>4 ounces Swiss cheese, shredded (1 cup)</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 425&deg;F. Unroll pastry according to package directions. Invert a 9-inch cake pan onto a baking sheet; drape pastry over pan, centering dough as well as possible. Gently pierce flat portion of surface with fork to prevent bubbles.</li>
+            <li>Bake for about 10 minutes, then reduce heat to 350&deg;F and bake until golden and crisp, about 15 minutes more. Transfer baking sheet to a rack and let cool.</li>
+            <li>Preheat oven to 375&deg;F. Wrap a sheet of foil around outside of a cake pan to form a foil shell. Place foil shell right-side up on a baking sheet. Spray with cooking spray. Place pastry shell inside foil to prevent leaking.</li>
+            <li>Place spinach on a plate and microwave on high for 3 minutes, until thawed but not hot. Squeeze as much liquid as possible out of spinach, then coarsely chop. Transfer to a bowl.</li>
+            <li>Add eggs, half-and-half, salt, and pepper, and stir with a fork until well blended.</li>
+            <li>Distribute cheese in bottom of pastry shell. Slowly pour egg and spinach mixture into shell.</li>
+            <li>Bake until center is set, about 30 minutes. Let cool for 15 minutes before cutting into wedges.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 5: Bacon Home Fries -->
+<div class="recipe" id="bacon-home-fries">
+    <div class="recipe-header">
+        <p class="recipe-title">Bacon Home Fries</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 10 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 15 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>3 tablespoons olive oil</li>
+            <li>1 small onion, finely chopped</li>
+            <li>1/2 pound frozen oven fries (preferably with olive oil), cut into 1/2-inch pieces</li>
+            <li>1/2 cup packaged crumbled bacon (such as Hormel)</li>
+            <li>Freshly ground pepper</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Heat 1 tablespoon oil in a large, heavy skillet over medium heat. Add onion; cook, stirring, until softened, about 5 minutes.</li>
+            <li>Add 2 tablespoons oil and fries; cook, stirring occasionally, until golden and crisp, about 8 minutes.</li>
+            <li>Add crumbled bacon; cook for 1 minute more. Season to taste with pepper.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 6: Potatoes Savoyarde -->
+<div class="recipe" id="potatoes-savoyarde">
+    <div class="recipe-header">
+        <p class="recipe-title">Potatoes Savoyarde</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Cook:</span> 60&ndash;70 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 tablespoon unsalted butter, melted, plus 3 tablespoons unsalted butter, cut into small pieces</li>
+            <li>3 cloves garlic, minced</li>
+            <li>2 tablespoons finely chopped fresh parsley</li>
+            <li>1 1/2 cups shredded Gruy&egrave;re cheese</li>
+            <li>1/4 teaspoon freshly ground pepper</li>
+            <li>2 1/2 pounds varietal potatoes, unpeeled and cut into 1/4-inch slices</li>
+            <li>1 1/2 cups stock</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 375&deg;F. Brush a 2-quart baking dish with melted butter.</li>
+            <li>In a small bowl, stir together garlic, parsley, cheese, and pepper.</li>
+            <li>Layer one-third of the potatoes in the prepared dish and sprinkle one-third of the garlic-cheese mixture over the top. Cover with 1 tablespoon of the butter pieces. Repeat the layers once and finish with the remaining potatoes.</li>
+            <li>Pour the stock and then the remaining garlic-cheese mixture over the layers. Dot with the remaining butter pieces.</li>
+            <li>Cover the dish with a piece of aluminum foil buttered on one side. Bake for 30 minutes.</li>
+            <li>Remove the foil and continue baking until the potatoes are tender and the top is brown and crusty, 30&ndash;40 minutes longer. Serve immediately.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Adapted from Williams-Sonoma Potatoes (Time-Life)</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 7: Onion and Bacon Tart -->
+<div class="recipe" id="onion-and-bacon-tart">
+    <div class="recipe-header">
+        <p class="recipe-title">Onion and Bacon Tart</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Cook:</span> 25 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>8 bacon slices, chopped</li>
+            <li>5 cups sliced onions (about 3 large)</li>
+            <li>1 large egg</li>
+            <li>1/2 cup sour cream</li>
+            <li>1 teaspoon salt</li>
+            <li>1/2 teaspoon ground black pepper</li>
+            <li>Pinch of ground nutmeg</li>
+            <li>1 (13.8-ounce) tube refrigerated pizza dough</li>
+            <li>1/4 teaspoon caraway seeds</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat oven to 375&deg;F. Saut&eacute; bacon in a heavy large skillet over medium-high heat until slightly crisp. Drain all but 1 tablespoon bacon drippings from skillet.</li>
+            <li>Add onions to bacon and saut&eacute; over medium heat until onions are very tender but not brown, about 20 minutes. Cool.</li>
+            <li>Whisk egg, sour cream, salt, pepper, and nutmeg in a large bowl to blend. Stir in cooled onion mixture.</li>
+            <li>Roll pizza dough out on a lightly floured surface to a 13x10-inch rectangle. Transfer to baking sheet.</li>
+            <li>Spread onion mixture over dough, leaving a 1/2-inch plain border around edges. Sprinkle with caraway seeds.</li>
+            <li>Bake until onion custard is set and crust is golden brown around edges and brown on bottom, about 25 minutes.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 8: Maple-Glazed Autumn Carrots with Garlic Cloves -->
+<div class="recipe" id="maple-glazed-autumn-carrots-with-garlic-cloves">
+    <div class="recipe-header">
+        <p class="recipe-title">Maple-Glazed Autumn Carrots with Garlic Cloves</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6 to 8</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>5 pounds orange and yellow carrots, peeled, halved lengthwise, and cut crosswise into 4-inch-long pieces</li>
+            <li>Salt and freshly ground pepper, to taste</li>
+            <li>20 garlic cloves, halved lengthwise</li>
+            <li>1/4 cup pure maple syrup</li>
+            <li>1/4 cup extra-virgin olive oil</li>
+            <li>1 teaspoon chopped fresh flat-leaf parsley</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Position 1 rack in the upper third of an oven and another rack in the lower third. Preheat to 400&deg;F.</li>
+            <li>In a large bowl, combine the carrots, garlic, olive oil, salt, and pepper and stir to coat evenly. Divide the carrot mixture between 2 baking sheets.</li>
+            <li>Roast, without stirring, until the carrots and garlic are tender and golden brown underneath, 28 to 30 minutes; halfway through the roasting time, switch the positions of the baking sheets on the oven racks.</li>
+            <li>Transfer the carrot mixture to a large bowl, drizzle with the maple syrup, and stir to coat evenly. Transfer to a serving bowl and sprinkle with the parsley.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 9: Green Beans with Toasted Almond Gremolata -->
+<div class="recipe" id="green-beans-with-toasted-almond-gremolata">
+    <div class="recipe-header">
+        <p class="recipe-title">Green Beans with Toasted Almond Gremolata</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Yield:</span> 8&ndash;10 servings</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>2 pounds green beans, trimmed</li>
+            <li>1/4 cup chopped fresh flat-leaf parsley</li>
+            <li>2 tablespoons sliced almonds, toasted</li>
+            <li>1/2 teaspoon grated lemon rind</li>
+            <li>1 tablespoon fresh lemon juice</li>
+            <li>2 teaspoons olive oil</li>
+            <li>1/2 teaspoon salt</li>
+            <li>1/4 teaspoon freshly ground black pepper</li>
+            <li>2 garlic cloves, minced</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Steam beans, covered, 7 minutes or until crisp-tender. Drain and return to pan.</li>
+            <li>Add parsley, almonds, lemon rind, lemon juice, olive oil, salt, pepper, and garlic; toss gently to combine.</li>
+            <li>Serve immediately.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Magazine clipping</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 10: Lemon Roasted Fingerling Potatoes -->
+<div class="recipe" id="lemon-roasted-fingerling-potatoes">
+    <div class="recipe-header">
+        <p class="recipe-title">Lemon Roasted Fingerling Potatoes</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Cook:</span> 25&ndash;30 min</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4&ndash;6</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 pound fingerling potatoes</li>
+            <li>1/2 Meyer lemon, cut into quarter wedges</li>
+            <li>1 sprig rosemary, leaves only</li>
+            <li>2 sprigs thyme, leaves only</li>
+            <li>Kosher salt</li>
+            <li>Freshly ground black pepper</li>
+            <li>Extra-virgin olive oil</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Wash and split fingerling potatoes lengthwise.</li>
+            <li>Toss in olive oil together with rosemary, thyme, and lemon wedges in a flat roasting tray. Season with salt and freshly ground pepper.</li>
+            <li>Roast under the rotisserie chicken for 25 to 30 minutes until golden brown. Stir occasionally to coat in chicken drippings and cook evenly.</li>
+            <li>Season one more time with salt and pepper before serving.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Tyler Florence</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 11: Pan-Grilled Flatbread with Mushrooms and Autumn Vegetables -->
+<div class="recipe" id="pan-grilled-flatbread-with-mushrooms-and-autumn-vegetables">
+    <div class="recipe-header">
+        <p class="recipe-title">Pan-Grilled Flatbread with Mushrooms and Autumn Vegetables</p>
+    </div>
+
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Serves:</span> 6</div>
+    </div>
+
+    <div class="ingredients">
+        <h2>Flatbread Filling</h2>
+        <ul>
+            <li>6 medium golden beets</li>
+            <li>Coarse salt and freshly ground pepper</li>
+            <li>2 tablespoons unsalted butter</li>
+            <li>1 teaspoon Madras curry powder</li>
+            <li>1 leek, white part only, finely chopped</li>
+            <li>2 large red bell peppers, chopped</li>
+            <li>1/2 cup shiitake mushrooms, sliced</li>
+            <li>1/2 cup maitake mushrooms, sliced</li>
+            <li>8 Brussels sprouts, thinly sliced on a mandoline</li>
+            <li>1/4 pound ricotta salata, thinly sliced</li>
+            <li>Juice of 1/2 lemon</li>
+            <li>1 tablespoon olive oil</li>
+            <li>1 cup plain yogurt</li>
+        </ul>
+        <h2>Grilled Flatbread</h2>
+        <ul>
+            <li>1 teaspoon dry active yeast</li>
+            <li>1 1/4 cups warm water</li>
+            <li>1 cup bread flour, plus more for work surface</li>
+            <li>1 tablespoon sugar</li>
+            <li>1 teaspoon salt</li>
+            <li>1 tablespoon olive oil, plus more for bowl and griddle</li>
+        </ul>
+    </div>
+
+    <div class="directions">
+        <h2>Grilled Flatbread</h2>
+        <ol>
+            <li>In a large bowl, mix together yeast and 3/4 cup water; let stand 5 minutes. Add remaining 1/2 cup water, flour, sugar, salt, and olive oil; mix until a dough is formed.</li>
+            <li>Turn dough out onto a lightly floured work surface and knead until firm, about 5 minutes. Lightly oil a large bowl and add dough. Cover with plastic wrap and keep in a warm place; let rise until doubled in size, about 2 hours.</li>
+            <li>Divide dough into 8 to 10 (2-ounce) pieces. Roll each piece out to a 1/8-inch-thick circle; cover dough with a clean towel.</li>
+            <li>Heat griddle over high heat and lightly coat with olive oil. Working with one piece at a time, add dough to griddle. Cook until bubbling and brown, 40 seconds to 1 minute, then turn and continue cooking 20 seconds more. Remove from heat; wipe griddle clean. Repeat with remaining dough.</li>
+        </ol>
+        <h2>Filling &amp; Assembly</h2>
+        <ol>
+            <li>Preheat oven to 400&deg;F. Place beets in a medium roasting pan and add 1/4 cup water; season with 1 tablespoon salt. Cover with parchment-lined aluminum foil and roast until tender and easily pierced with a paring knife, about 25 minutes. Peel skin using a paper towel. Thinly slice beets and set aside.</li>
+            <li>In a large skillet, heat butter and curry powder over medium heat. Add leeks and cook, stirring, until tender, 6 to 7 minutes. Add peppers and cook until tender, about 10 minutes. Add mushrooms and cook until steaming and heated through, 5 to 6 minutes. Remove from heat.</li>
+            <li>In a medium bowl, add Brussels sprouts, ricotta salata, lemon juice, and olive oil; season with salt and pepper and toss. In a small bowl, whisk yogurt with a splash of water until smooth; season with salt and pepper.</li>
+            <li>Lay one piece of flatbread on work surface. Place 3 slices of beets over three-quarters of the flatbread; top with 1/4 cup saut&eacute;ed vegetables, 2 tablespoons Brussels sprouts, and 1 tablespoon yogurt. Starting with the covered portion, roll flatbread toward the uncovered portion and place seam-side up; insert a skewer to secure. Repeat with remaining flatbread.</li>
+            <li>Remove skewers and slice each in half before serving.</li>
+        </ol>
+    </div>
+
+    <div class="recipe-footer">
+        <span class="recipe-source">Bryan Sikora, Talula&rsquo;s Table</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 12: Cheese Crackers -->
+<div class="recipe" id="cheese-crackers">
+    <div class="recipe-header">
+        <p class="recipe-title">Cheese Crackers</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Yield:</span> About 48 crackers</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>3 oz extra-sharp cheddar cheese, coarsely grated</li>
+            <li>1 oz Parmigiano-Reggiano, finely grated</li>
+            <li>1/2 cup white whole wheat flour</li>
+            <li>1/2 cup unbleached all-purpose flour</li>
+            <li>3/4 cup cold unsalted butter, cut into tablespoons</li>
+            <li>1/4 teaspoon salt</li>
+            <li>1/4 teaspoon cayenne</li>
+            <li>1/4 teaspoon dry mustard</li>
+            <li>1 1/2 tablespoons sour cream</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Pulse both cheeses, both flours, butter, salt, cayenne, and dry mustard in a food processor until mixture resembles coarse meal. Add sour cream and pulse until dough just comes together.</li>
+            <li>Turn dough out onto a lightly floured surface and divide in half. Roll each half into a log about 1 1/4 inches in diameter. Wrap in plastic wrap and refrigerate until firm, at least 1 hour.</li>
+            <li>Preheat oven to 350&deg;F. Line baking sheets with parchment paper.</li>
+            <li>Slice logs into 1/4-inch-thick rounds and arrange on prepared baking sheets about 1 inch apart. Bake until golden, 15 to 17 minutes. Transfer to wire racks to cool.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Gourmet Cooking Arts Center, executive chef Sara Moulton — King Arthur Flour</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+</body>
+</html>

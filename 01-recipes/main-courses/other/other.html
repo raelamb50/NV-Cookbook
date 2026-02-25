@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Natalie's Favorite Recipes — Main Courses — Other</title>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <style>
+        @media print { .recipe { page-break-after: always; } .recipe:last-child { page-break-after: avoid; } body { margin: 0; } }
+        body { font-family: 'Lato', Georgia, serif; color: #333; max-width: 7.5in; margin: 0 auto; padding: 0.5in; }
+        .recipe { padding: 0.25in 0; }
+        .recipe-header { border-bottom: 2px solid #8B0000; padding-bottom: 8px; margin-bottom: 16px; }
+        .recipe-title { font-family: 'Playfair Display', Georgia, serif; font-size: 24px; font-weight: bold; color: #8B0000; margin: 0; }
+        .recipe-meta { display: flex; gap: 32px; margin: 12px 0; font-size: 14px; background: #f9f5f0; padding: 8px 12px; border-radius: 4px; }
+        .meta-item { display: flex; gap: 6px; } .meta-label { font-weight: bold; }
+        h2 { font-family: 'Playfair Display', Georgia, serif; font-size: 18px; color: #8B0000; margin: 20px 0 8px 0; border-bottom: 1px solid #ddd; padding-bottom: 4px; }
+        .ingredients ul { list-style: disc; padding-left: 24px; margin: 0; }
+        .ingredients li { font-size: 14px; line-height: 1.7; }
+        .directions ol { padding-left: 24px; margin: 0; }
+        .directions li { font-size: 14px; line-height: 1.7; margin-bottom: 8px; }
+        .recipe-footer { margin-top: 28px; padding-top: 10px; border-top: 1px solid #ddd; display: flex; justify-content: space-between; align-items: center; }
+        .recipe-source { font-size: 11px; font-style: italic; color: #999; }
+        .cookbook-stamp { font-family: 'Playfair Display', Georgia, serif; font-size: 11px; color: #8B0000; font-weight: bold; letter-spacing: 1px; text-transform: uppercase; }
+        h1.section-title { font-family: 'Playfair Display', Georgia, serif; text-align: center; font-size: 32px; color: #8B0000; border-bottom: 3px solid #8B0000; padding-bottom: 12px; margin-bottom: 0; }
+    
+        /* Table of Contents styles */
+        .toc {
+            page-break-after: always;
+            padding: 0.5in 0;
+        }
+        .toc h2 {
+            font-family: 'Playfair Display', Georgia, serif;
+            text-align: center;
+            font-size: 22px;
+            color: #8B0000;
+            border-bottom: 2px solid #8B0000;
+            padding-bottom: 8px;
+            margin: 24px 0 16px 0;
+        }
+        .toc ol {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        .toc li {
+            font-family: 'Lato', Georgia, serif;
+            font-size: 16px;
+            line-height: 2.2;
+            border-bottom: 1px dotted #ccc;
+        }
+        .toc li a {
+            color: #333;
+            text-decoration: none;
+            display: block;
+            padding: 2px 0;
+        }
+        .toc li a:hover {
+            color: #8B0000;
+        }
+        .toc li .toc-number {
+            color: #8B0000;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<h1 class="section-title">Main Courses &mdash; Other</h1>
+
+<div class="toc">
+    <h2>Table of Contents</h2>
+    <ol>
+        <li><a href="#grilled-tofu-with-asiago-and-walnut-pesto"><span class="toc-number">1.</span> Grilled Tofu with Asiago and Walnut Pesto</a></li>
+        <li><a href="#orzo-stuffed-peppers"><span class="toc-number">2.</span> Orzo Stuffed Peppers</a></li>
+    </ol>
+</div>
+
+<!-- Recipe 1: Grilled Tofu with Asiago and Walnut Pesto -->
+<div class="recipe" id="grilled-tofu-with-asiago-and-walnut-pesto">
+    <div class="recipe-header">
+        <p class="recipe-title">Grilled Tofu with Asiago and Walnut Pesto</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 5 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 4 min</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Intermediate</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Pesto:</p>
+        <ul>
+            <li>1/2 cup grated Asiago cheese</li>
+            <li>1/2 cup chopped fresh flat-leaf parsley</li>
+            <li>1/4 cup chopped walnuts</li>
+            <li>1 tablespoon (about 5 leaves), chopped fresh sage</li>
+            <li>1 garlic clove, roughly chopped</li>
+            <li>5 tablespoons grapeseed oil</li>
+            <li>1/4 teaspoon kosher salt</li>
+            <li>1/4 teaspoon freshly ground black pepper</li>
+        </ul>
+        <p style="font-size: 14px; font-weight: bold; margin: 8px 0 4px 0;">Tofu:</p>
+        <ul>
+            <li>14 ounces firm tofu, drained and patted dry with paper towels</li>
+            <li>3 tablespoons extra-virgin olive oil</li>
+            <li>Salt and freshly ground black pepper</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li><strong>For the pesto:</strong> Place all the pesto ingredients in the bowl of a food processor. Pulse until smooth.</li>
+            <li><strong>For the tofu:</strong> Place a grill pan over medium-high heat or preheat a gas or charcoal grill. Cut the tofu in half diagonally to make 2 large triangles. Cut each large triangle in half to make 4 smaller triangles. Place the triangles, long side down, on a cutting board and carefully cut each into 3 slices. Brush the tofu triangles, on each side, with the extra-virgin olive oil. Season with salt and pepper. Grill the tofu for 2 minutes on each side.</li>
+            <li>Carefully transfer the tofu to a serving platter. Spoon the pesto over the tofu and serve.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Giada De Laurentiis, 2008 — Food Network</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+<!-- Recipe 2: Orzo Stuffed Peppers -->
+<div class="recipe" id="orzo-stuffed-peppers">
+    <div class="recipe-header">
+        <p class="recipe-title">Orzo Stuffed Peppers</p>
+    </div>
+    <div class="recipe-meta">
+        <div class="meta-item"><span class="meta-label">Prep:</span> 15 min</div>
+        <div class="meta-item"><span class="meta-label">Cook:</span> 1 hr</div>
+        <div class="meta-item"><span class="meta-label">Level:</span> Intermediate</div>
+        <div class="meta-item"><span class="meta-label">Serves:</span> 4 to 6</div>
+    </div>
+    <div class="ingredients">
+        <h2>Ingredients</h2>
+        <ul>
+            <li>1 (28-ounce) can Italian tomatoes</li>
+            <li>2 zucchini, grated</li>
+            <li>1/2 cup chopped fresh mint leaves</li>
+            <li>1/2 cup grated Pecorino Romano, plus more for sprinkling</li>
+            <li>1/4 cup extra-virgin olive oil</li>
+            <li>3 cloves garlic, minced</li>
+            <li>1 teaspoon salt</li>
+            <li>1 teaspoon freshly ground black pepper</li>
+            <li>4 cups chicken broth</li>
+            <li>1 1/2 cups orzo (rice-shaped pasta)</li>
+            <li>6 sweet bell peppers (red or yellow)</li>
+        </ul>
+    </div>
+    <div class="directions">
+        <h2>Directions</h2>
+        <ol>
+            <li>Preheat the oven to 400&deg;F.</li>
+            <li>Pour the tomatoes into a large bowl and break apart using a pair of kitchen shears or your finger tips. Add the zucchini, mint, cheese, olive oil, garlic, salt, and pepper. Stir to combine.</li>
+            <li>Meanwhile, bring the chicken broth to a boil in a medium saucepan over high heat. Add the orzo and cook for 4 minutes. The orzo should be only partially cooked. Use a fine mesh sieve to transfer the orzo to the large bowl with the other vegetables. Stir the orzo into the vegetable mix to combine. Transfer the warm chicken broth to a 3-quart baking dish.</li>
+            <li>Slice the tops off the peppers and remove all ribs and seeds. Cut a very thin slice from the base to help the peppers stand up.</li>
+            <li>Place the peppers in the baking dish with the warm chicken broth. Spoon the orzo mixture into the peppers. Cover the dish with foil and bake for 45 minutes. Remove the foil, sprinkle the top of each pepper with cheese and continue baking until the cheese is golden, about 15 minutes. Remove from the oven, carefully transfer the orzo stuffed pepper to a serving plate.</li>
+        </ol>
+    </div>
+    <div class="recipe-footer">
+        <span class="recipe-source">Recipe courtesy Giada De Laurentiis, Everyday Italian — Food Network</span>
+        <span class="cookbook-stamp">Natalie's Favorite Recipes</span>
+    </div>
+</div>
+
+</body>
+</html>
