@@ -272,6 +272,11 @@
         tabBar.appendChild(btn);
     });
 
+    // Prevent browser from restoring previous scroll position
+    if ('scrollRestoration' in history) {
+        history.scrollRestoration = 'manual';
+    }
+
     let isInitialLoad = true;
 
     async function loadSection(index) {
@@ -298,8 +303,11 @@
                 cache[index] = html;
             }
             contentArea.innerHTML = html;
-            // Scroll to top of content when clicking tabs, but not on initial page load
-            if (!isInitialLoad) {
+            // On initial load, scroll to very top of page so header is visible.
+            // On tab clicks, scroll to top of content area.
+            if (isInitialLoad) {
+                window.scrollTo(0, 0);
+            } else {
                 contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
             isInitialLoad = false;
