@@ -225,9 +225,8 @@
         /* Print — hide nav, show content */
         @media print {
             .site-header { display: none; }
-            .content-area { max-width: none; padding: 0; }
-            .recipe { page-break-after: always; }
-            .recipe:last-child { page-break-after: avoid; }
+            .content-area { max-width: none; padding: 0; min-height: 0; }
+            .recipe { page-break-before: always; break-before: page; }
         }
     </style>
 </head>
