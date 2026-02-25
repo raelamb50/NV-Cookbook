@@ -317,13 +317,8 @@
                 cache[index] = html;
             }
             contentArea.innerHTML = html;
-            // On initial load, scroll to very top of page so header is visible.
-            // On tab clicks, scroll to top of content area.
-            if (isInitialLoad) {
-                window.scrollTo(0, 0);
-            } else {
-                contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
-            }
+            // Always scroll to top so the TOC starts right below the header
+            window.scrollTo(0, 0);
             isInitialLoad = false;
         } catch (e) {
             contentArea.innerHTML = '<div class="error">Could not load this section. Try refreshing the page.</div>';
