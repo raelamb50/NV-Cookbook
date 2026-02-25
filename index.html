@@ -272,6 +272,8 @@
         tabBar.appendChild(btn);
     });
 
+    let isInitialLoad = true;
+
     async function loadSection(index) {
         if (index === activeIndex) return;
         activeIndex = index;
@@ -296,8 +298,11 @@
                 cache[index] = html;
             }
             contentArea.innerHTML = html;
-            // Scroll to top of content
-            contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            // Scroll to top of content when clicking tabs, but not on initial page load
+            if (!isInitialLoad) {
+                contentArea.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+            isInitialLoad = false;
         } catch (e) {
             contentArea.innerHTML = '<div class="error">Could not load this section. Try refreshing the page.</div>';
         }
