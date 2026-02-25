@@ -22,8 +22,10 @@
             border-bottom: 3px solid #8B0000;
             padding: 32px 24px 0;
             text-align: center;
-            position: sticky;
+            position: fixed;
             top: 0;
+            left: 0;
+            right: 0;
             z-index: 100;
         }
         .site-title {
@@ -261,10 +263,16 @@
         { label: 'Top Secret Family Recipes', path: '01-recipes/top-secret-family-recipes/top-secret-family-recipes.html' }
     ];
 
+    const siteHeader = document.querySelector('.site-header');
     const tabBar = document.getElementById('tabBar');
     const contentArea = document.getElementById('contentArea');
     const cache = {};
     let activeIndex = -1;
+
+    // Push content below the fixed header
+    function updateHeaderSpacing() {
+        contentArea.style.marginTop = siteHeader.offsetHeight + 'px';
+    }
 
     // Build tab buttons
     sections.forEach((section, i) => {
@@ -274,6 +282,9 @@
         btn.addEventListener('click', () => loadSection(i));
         tabBar.appendChild(btn);
     });
+
+    updateHeaderSpacing();
+    window.addEventListener('resize', updateHeaderSpacing);
 
     // Prevent browser from restoring previous scroll position
     if ('scrollRestoration' in history) {
