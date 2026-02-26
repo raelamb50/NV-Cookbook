@@ -228,11 +228,26 @@
             .content-area .recipe-meta { flex-direction: column; gap: 8px; }
         }
 
+        /* Back to Top link */
+        .back-to-top {
+            display: block;
+            text-align: center;
+            margin-top: 20px;
+            font-size: 13px;
+            color: #8B0000;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .back-to-top:hover {
+            text-decoration: underline;
+        }
+
         /* Print — hide nav, show content */
         @media print {
             .site-header { display: none; }
             .content-area { max-width: none; padding: 0; min-height: 0; }
             .recipe { page-break-before: always; break-before: page; }
+            .back-to-top { display: none; }
         }
     </style>
 </head>
@@ -318,6 +333,18 @@
                 cache[index] = html;
             }
             contentArea.innerHTML = html;
+            // Inject "Back to Top" link at the end of each recipe
+            contentArea.querySelectorAll('.recipe').forEach(recipe => {
+                const btn = document.createElement('a');
+                btn.href = '#';
+                btn.className = 'back-to-top';
+                btn.textContent = '\u2191 Back to Top';
+                btn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
+                });
+                recipe.appendChild(btn);
+            });
             // Always scroll to top so the TOC starts right below the header
             window.scrollTo(0, 0);
             isInitialLoad = false;
@@ -325,6 +352,18 @@
             contentArea.innerHTML = '<div class="error">Could not load this section. Try refreshing the page.</div>';
         }
     }
+
+    // Fix TOC anchor links landing behind the fixed header
+    contentArea.addEventListener('click', function(e) {
+        const link = e.target.closest('.toc a[href^="#"]');
+        if (!link) return;
+        e.preventDefault();
+        const target = document.getElementById(link.getAttribute('href').slice(1));
+        if (target) {
+            const offset = siteHeader.offsetHeight;
+            window.scrollTo({ top: target.offsetTop + contentArea.offsetTop - offset, behavior: 'smooth' });
+        }
+    });
 
     // Load first section on page load
     loadSection(0);
