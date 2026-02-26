@@ -360,9 +360,8 @@
         e.preventDefault();
         const target = document.getElementById(link.getAttribute('href').slice(1));
         if (target) {
-            const headerHeight = siteHeader.offsetHeight;
-            const targetTop = target.getBoundingClientRect().top + window.scrollY;
-            window.scrollTo({ top: targetTop - headerHeight, behavior: 'smooth' });
+            target.style.scrollMarginTop = siteHeader.offsetHeight + 'px';
+            target.scrollIntoView({ behavior: 'smooth', block: 'start' });
         }
     });
 
